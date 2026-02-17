@@ -3,366 +3,695 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Faybees | Gift & Branded Boxes • Packaging Essentials • Fresh Flowers</title>
-  <meta name="description" content="Faybees provides gift boxes, branded boxes, packaging essentials, and fresh flowers with nationwide delivery. Order via WhatsApp or shop online." />
+  <title>FAYBEES | Beyond Packaging</title>
+  <meta name="description" content="FAYBEES — Gift boxes, branded boxes, packaging essentials & fresh flowers. Cute, premium packaging with nationwide delivery." />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Faybees | Beyond Packaging" />
-  <meta property="og:description" content="Gift boxes • Branded boxes • Packaging essentials • Fresh flowers • Nationwide delivery." />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Open Graph (optional) -->
+  <meta property="og:title" content="FAYBEES | Beyond Packaging" />
+  <meta property="og:description" content="Gift boxes • Branded boxes • Packaging essentials • Fresh flowers • Nationwide delivery" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://dummyimage.com/1200x630/111/fff.png&text=Faybees" />
 
   <style>
     :root{
-      --bg:#0b0b0d;
-      --card:#121218;
-      --text:#f6f6f7;
-      --muted:#b9bcc6;
-      --line:#242432;
-      --accent:#e9b6ff;
-      --accent2:#9fe7ff;
-      --shadow: 0 18px 60px rgba(0,0,0,.35);
-      --radius: 18px;
+      /* Brand-inspired palette (logo = cocoa + cream) */
+      --cocoa:#4b2a22;
+      --cocoa-2:#6a3b30;
+      --cream:#fbf2ea;
+      --ivory:#fff8f3;
+
+      /* Girly accents */
+      --blush:#ffd6e6;
+      --rose:#ff7fb0;
+      --rose-2:#ff4f96;
+      --lilac:#e9d6ff;
+
+      /* Neutrals */
+      --ink:#221915;
+      --muted:#6d5b54;
+      --line: rgba(75,42,34,.14);
+      --shadow: 0 18px 60px rgba(75,42,34,.18);
+      --radius: 22px;
       --max: 1100px;
     }
+
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      background: radial-gradient(1000px 600px at 15% 10%, rgba(233,182,255,.18), transparent 60%),
-                  radial-gradient(900px 600px at 85% 20%, rgba(159,231,255,.14), transparent 55%),
-                  var(--bg);
-      color:var(--text);
-      line-height:1.45;
+      font-family:"Plus Jakarta Sans", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color:var(--ink);
+
+      /* Cute girly background with soft gradients */
+      background:
+        radial-gradient(700px 500px at 15% 10%, rgba(255,127,176,.20), transparent 55%),
+        radial-gradient(700px 500px at 80% 20%, rgba(233,214,255,.35), transparent 55%),
+        radial-gradient(800px 600px at 55% 90%, rgba(255,214,230,.35), transparent 60%),
+        linear-gradient(180deg, var(--ivory), var(--cream));
     }
+
     a{color:inherit; text-decoration:none}
-    .wrap{max-width:var(--max); margin:0 auto; padding:24px}
+    img{max-width:100%; display:block}
+
+    .wrap{max-width:var(--max); margin:0 auto; padding:22px 18px 60px}
+    .glass{
+      background: rgba(255,255,255,.72);
+      border: 1px solid rgba(75,42,34,.10);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      backdrop-filter: blur(8px);
+    }
+
+    /* Top nav */
     header{
       position:sticky; top:0; z-index:50;
+      background: rgba(255,248,243,.72);
+      border-bottom:1px solid rgba(75,42,34,.10);
       backdrop-filter: blur(10px);
-      background: rgba(11,11,13,.6);
-      border-bottom:1px solid rgba(36,36,50,.65);
     }
     .nav{
-      display:flex; align-items:center; justify-content:space-between; gap:14px;
-      max-width:var(--max); margin:0 auto; padding:14px 24px;
+      max-width:var(--max);
+      margin:0 auto;
+      padding:12px 18px;
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
     }
     .brand{
-      display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:.2px;
+      display:flex; align-items:center; gap:10px;
     }
-    .logo{
-      width:34px; height:34px; border-radius:12px;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      box-shadow: 0 10px 25px rgba(233,182,255,.12);
+    .logoBadge{
+      width:42px; height:42px; border-radius:999px;
+      background: radial-gradient(circle at 30% 30%, rgba(255,214,230,.9), rgba(255,255,255,.3)),
+                  linear-gradient(135deg, var(--cocoa), var(--cocoa-2));
+      border:2px solid rgba(255,255,255,.7);
+      box-shadow: 0 14px 40px rgba(75,42,34,.18);
+      position:relative;
+      overflow:hidden;
     }
-    .navlinks{display:flex; gap:14px; flex-wrap:wrap}
+    .logoBadge:before{
+      content:"";
+      position:absolute; inset:-30px;
+      background:
+        radial-gradient(circle at 20% 35%, rgba(255,255,255,.22) 0 20%, transparent 21%),
+        radial-gradient(circle at 65% 70%, rgba(255,214,230,.18) 0 18%, transparent 19%);
+      transform: rotate(14deg);
+    }
+    .brandText strong{
+      display:block;
+      font-family:"Playfair Display", serif;
+      letter-spacing:.14em;
+      font-size:14px;
+      color:var(--cocoa);
+    }
+    .brandText span{
+      display:block;
+      font-size:12px;
+      color:var(--muted);
+      margin-top:2px;
+    }
+    .navlinks{display:flex; gap:10px; flex-wrap:wrap}
     .navlinks a{
-      color:var(--muted); font-weight:600; font-size:14px;
-      padding:8px 10px; border-radius:12px;
+      font-weight:700;
+      font-size:13px;
+      color:var(--cocoa);
+      padding:9px 12px;
+      border-radius:999px;
+      border:1px solid rgba(75,42,34,.12);
+      background: rgba(255,255,255,.65);
     }
-    .navlinks a:hover{color:var(--text); background: rgba(255,255,255,.05)}
+    .navlinks a:hover{
+      transform: translateY(-1px);
+      transition:.18s ease;
+      border-color: rgba(255,79,150,.25);
+      box-shadow: 0 12px 28px rgba(255,79,150,.10);
+    }
+
+    /* Buttons */
     .btn{
       display:inline-flex; align-items:center; justify-content:center; gap:10px;
-      padding:12px 14px; border-radius:14px; font-weight:700;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.06);
-      box-shadow: var(--shadow);
+      padding:12px 14px;
+      border-radius:999px;
+      border:1px solid rgba(75,42,34,.14);
+      background: rgba(255,255,255,.78);
+      font-weight:800;
+      color:var(--cocoa);
+      box-shadow: 0 10px 30px rgba(75,42,34,.10);
     }
-    .btn:hover{transform: translateY(-1px); transition:.2s ease}
+    .btn:hover{transform: translateY(-1px); transition:.18s ease}
     .btn.primary{
       border:none;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      color:#15151b;
+      background: linear-gradient(135deg, var(--rose), var(--rose-2));
+      color:white;
+      box-shadow: 0 14px 36px rgba(255,79,150,.24);
+    }
+    .btn.cocoa{
+      border:none;
+      background: linear-gradient(135deg, var(--cocoa), var(--cocoa-2));
+      color: var(--cream);
+      box-shadow: 0 14px 36px rgba(75,42,34,.22);
     }
 
+    /* Floral banner (original SVG style) */
+    .floralBanner{
+      margin:18px 0 0;
+      padding:18px;
+      border-radius: var(--radius);
+      border:1px dashed rgba(255,79,150,.25);
+      background:
+        radial-gradient(circle at 10% 20%, rgba(255,214,230,.9), transparent 55%),
+        radial-gradient(circle at 90% 10%, rgba(233,214,255,.8), transparent 55%),
+        rgba(255,255,255,.75);
+      position:relative;
+      overflow:hidden;
+    }
+    .floralBanner svg{
+      position:absolute; inset:0;
+      opacity:.22;
+      pointer-events:none;
+    }
+    .floralBanner .inner{
+      position:relative;
+      display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap;
+    }
+    .tag{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:9px 12px;
+      border-radius:999px;
+      background: rgba(255,255,255,.78);
+      border:1px solid rgba(75,42,34,.12);
+      font-weight:800;
+      color:var(--cocoa);
+      font-size:13px;
+    }
+
+    /* Hero */
     .hero{
-      padding:54px 0 28px;
-      display:grid; gap:22px;
+      display:grid;
       grid-template-columns: 1.2fr .8fr;
-      align-items:stretch;
+      gap:14px;
+      margin-top:16px;
     }
     @media (max-width: 900px){
-      .hero{grid-template-columns: 1fr; padding-top:26px}
+      .hero{grid-template-columns:1fr}
+      .navlinks{display:none}
     }
-    .panel{
-      background: rgba(18,18,24,.78);
-      border:1px solid rgba(36,36,50,.7);
-      border-radius: var(--radius);
-      padding:22px;
-      box-shadow: var(--shadow);
-    }
-    .kicker{
-      display:inline-flex; gap:8px; align-items:center;
-      padding:8px 10px; border-radius:999px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.06);
-      color:var(--muted); font-weight:700; font-size:13px;
-      margin-bottom:12px;
-    }
-    h1{margin:0 0 10px; font-size:44px; line-height:1.05}
-    @media (max-width: 520px){ h1{font-size:34px} }
-    .sub{color:var(--muted); font-size:16px; margin:0 0 18px}
-    .ctaRow{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
-    .stats{
-      display:grid; grid-template-columns: repeat(3,1fr); gap:12px; margin-top:18px
-    }
-    @media (max-width: 520px){ .stats{grid-template-columns:1fr} }
-    .stat{
-      padding:14px; border-radius:16px;
-      border:1px solid rgba(255,255,255,.09);
-      background: rgba(255,255,255,.04);
-    }
-    .stat b{display:block; font-size:18px}
-    .stat span{color:var(--muted); font-size:13px}
 
-    .grid{
-      display:grid; gap:14px;
-      grid-template-columns: repeat(3, 1fr);
-      margin: 22px 0 0;
-    }
-    @media (max-width: 900px){ .grid{grid-template-columns:1fr} }
     .card{
       padding:18px;
       border-radius: var(--radius);
-      border:1px solid rgba(36,36,50,.7);
-      background: rgba(18,18,24,.78);
+      border:1px solid rgba(75,42,34,.10);
+      background: rgba(255,255,255,.72);
       box-shadow: var(--shadow);
     }
-    .card h3{margin:0 0 8px}
-    .card p{margin:0; color:var(--muted)}
-    .pill{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:8px 10px; border-radius:999px;
-      background: rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.10);
-      color:var(--muted); font-weight:700; font-size:13px;
-      margin:10px 0 0;
+    h1{
+      margin:0 0 10px;
+      font-family:"Playfair Display", serif;
+      font-size:52px;
+      line-height:1.03;
+      color:var(--cocoa);
+      letter-spacing:.06em;
+    }
+    @media (max-width: 520px){ h1{font-size:38px} }
+    .sub{
+      margin:0 0 14px;
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.55;
+    }
+    .sparkle{
+      display:inline-block;
+      background: linear-gradient(135deg, rgba(255,127,176,.35), rgba(233,214,255,.55));
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,79,150,.22);
+      font-weight:800;
+      color:var(--cocoa);
+      font-size:13px;
+      margin-bottom:10px;
     }
 
-    section{scroll-margin-top:90px}
-    .sectionTitle{display:flex; align-items:flex-end; justify-content:space-between; gap:14px; margin:28px 0 12px}
-    .sectionTitle h2{margin:0; font-size:26px}
-    .sectionTitle p{margin:0; color:var(--muted)}
+    .ctaRow{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
+    .grid3{display:grid; gap:12px; grid-template-columns: repeat(3, 1fr); margin-top:12px}
+    @media (max-width: 900px){ .grid3{grid-template-columns:1fr} }
 
-    .twoCol{display:grid; gap:14px; grid-template-columns: 1fr 1fr}
+    .mini{
+      padding:14px;
+      border-radius:18px;
+      background: rgba(255,255,255,.72);
+      border:1px solid rgba(75,42,34,.10);
+    }
+    .mini b{display:block; color:var(--cocoa)}
+    .mini span{display:block; color:var(--muted); font-size:13px; margin-top:4px}
+
+    section{scroll-margin-top:90px}
+    .sectionHead{
+      margin:22px 0 10px;
+      display:flex; align-items:flex-end; justify-content:space-between; gap:12px; flex-wrap:wrap;
+    }
+    .sectionHead h2{
+      margin:0;
+      font-family:"Playfair Display", serif;
+      color:var(--cocoa);
+      letter-spacing:.06em;
+      font-size:26px;
+    }
+    .sectionHead p{margin:0; color:var(--muted); font-weight:600}
+
+    .tiles{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:12px;
+    }
+    @media (max-width: 900px){ .tiles{grid-template-columns:1fr} }
+
+    .tile{
+      padding:16px;
+      border-radius: var(--radius);
+      border:1px solid rgba(75,42,34,.10);
+      background:
+        radial-gradient(350px 220px at 20% 20%, rgba(255,214,230,.55), transparent 60%),
+        rgba(255,255,255,.72);
+      box-shadow: var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+    .tile:after{
+      content:"";
+      position:absolute; right:-30px; top:-30px;
+      width:140px; height:140px; border-radius:999px;
+      background: rgba(255,127,176,.18);
+      filter: blur(2px);
+    }
+    .tile h3{margin:0 0 8px; color:var(--cocoa)}
+    .tile p{margin:0; color:var(--muted)}
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      margin-top:10px;
+      padding:8px 10px;
+      border-radius:999px;
+      background: rgba(255,255,255,.78);
+      border:1px solid rgba(255,79,150,.20);
+      color:var(--cocoa);
+      font-weight:800;
+      font-size:12px;
+    }
+
+    .twoCol{
+      display:grid; gap:12px; grid-template-columns: 1fr 1fr;
+    }
     @media (max-width: 900px){ .twoCol{grid-template-columns:1fr} }
 
     .list{display:grid; gap:10px; margin-top:10px}
     .li{
-      padding:12px 14px; border-radius:16px;
-      border:1px solid rgba(255,255,255,.09);
-      background: rgba(255,255,255,.04);
+      padding:12px 14px;
+      border-radius:18px;
+      background: rgba(255,255,255,.72);
+      border:1px solid rgba(75,42,34,.10);
       color:var(--muted);
     }
-    .li b{color:var(--text)}
+    .li b{color:var(--cocoa)}
+    .gallery{
+      display:grid; gap:12px; grid-template-columns: repeat(3,1fr);
+    }
+    @media (max-width: 900px){ .gallery{grid-template-columns:1fr} }
+
+    .photo{
+      border-radius: var(--radius);
+      overflow:hidden;
+      border:1px solid rgba(75,42,34,.10);
+      box-shadow: var(--shadow);
+      background:
+        radial-gradient(220px 160px at 25% 25%, rgba(255,214,230,.75), transparent 60%),
+        radial-gradient(240px 170px at 75% 30%, rgba(233,214,255,.65), transparent 60%),
+        linear-gradient(135deg, rgba(75,42,34,.12), rgba(255,255,255,.6));
+      height:220px;
+      position:relative;
+    }
+    .photo .label{
+      position:absolute; left:14px; bottom:14px;
+      background: rgba(255,255,255,.78);
+      border:1px solid rgba(75,42,34,.10);
+      padding:8px 10px;
+      border-radius:999px;
+      font-weight:900;
+      color:var(--cocoa);
+      font-size:12px;
+    }
+
+    .quote{
+      padding:16px;
+      border-radius: var(--radius);
+      border:1px solid rgba(255,79,150,.18);
+      background:
+        radial-gradient(280px 180px at 20% 20%, rgba(255,214,230,.55), transparent 60%),
+        rgba(255,255,255,.72);
+      box-shadow: var(--shadow);
+    }
+    .quote p{margin:0; color:var(--muted); font-weight:600}
+    .quote b{display:block; margin-top:10px; color:var(--cocoa)}
+
     footer{
       margin-top:26px;
-      border-top:1px solid rgba(36,36,50,.7);
-      padding:22px 0 36px;
+      padding-top:18px;
+      border-top:1px solid rgba(75,42,34,.10);
       color:var(--muted);
+      font-size:13px;
     }
-    .small{font-size:13px}
-    .copy{cursor:pointer}
+    .copyBox{cursor:pointer}
   </style>
 </head>
 
 <body>
-  <header>
-    <div class="nav">
-      <div class="brand">
-        <div class="logo" aria-hidden="true"></div>
-        <div>
-          <div style="font-size:14px; color:var(--muted); font-weight:800; letter-spacing:.12em">FAYBEES</div>
-          <div style="font-size:12px; color:var(--muted)">Beyond packaging</div>
-        </div>
+<header>
+  <div class="nav">
+    <div class="brand">
+      <div class="logoBadge" aria-hidden="true"></div>
+      <div class="brandText">
+        <strong>FAYBEES</strong>
+        <span>Beyond Packaging</span>
+      </div>
+    </div>
+
+    <nav class="navlinks" aria-label="Primary">
+      <a href="#shop">Shop</a>
+      <a href="#custom">Custom Branding</a>
+      <a href="#how">How to Order</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <a class="btn primary" href="#contact">Order 💌</a>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- Cute floral banner -->
+  <div class="floralBanner glass">
+    <!-- Floral SVG pattern (original) -->
+    <svg viewBox="0 0 1200 300" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <linearGradient id="petal" x1="0" x2="1">
+          <stop offset="0" stop-color="#ff7fb0"/>
+          <stop offset="1" stop-color="#e9d6ff"/>
+        </linearGradient>
+      </defs>
+
+      <!-- Simple flower doodles -->
+      <g fill="none" stroke="url(#petal)" stroke-width="4" stroke-linecap="round" opacity="0.9">
+        <path d="M80,220 C120,170 160,170 200,220" />
+        <path d="M170,235 C180,210 190,210 200,235" />
+        <path d="M320,70 C340,40 370,40 390,70" />
+        <path d="M520,210 C550,160 600,160 630,210" />
+        <path d="M820,110 C850,70 900,70 930,110" />
+        <path d="M1040,220 C1070,170 1120,170 1150,220" />
+      </g>
+
+      <g fill="rgba(255,127,176,0.35)">
+        <circle cx="170" cy="235" r="10"/>
+        <circle cx="360" cy="70" r="10"/>
+        <circle cx="575" cy="210" r="10"/>
+        <circle cx="875" cy="110" r="10"/>
+        <circle cx="1095" cy="220" r="10"/>
+      </g>
+
+      <g fill="rgba(75,42,34,0.14)">
+        <circle cx="120" cy="200" r="8"/>
+        <circle cx="620" cy="185" r="8"/>
+        <circle cx="910" cy="95" r="8"/>
+      </g>
+    </svg>
+
+    <div class="inner">
+      <div class="tag">🎀 Gift Boxes</div>
+      <div class="tag">🌸 Fresh Flowers</div>
+      <div class="tag">🧁 Branded Boxes</div>
+      <div class="tag">✨ Packaging Essentials</div>
+      <div class="tag">🚚 Nationwide Delivery</div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="card">
+      <div class="sparkle">Cute • Premium • Picture-perfect packaging ✨</div>
+      <h1>FAYBEES</h1>
+      <p class="sub">
+        We create and supply <b>gift boxes</b>, <b>branded boxes</b>, and <b>packaging essentials</b> that make your business look
+        expensive — plus <b>fresh flowers</b> for beautiful gifting moments.
+      </p>
+
+      <div class="ctaRow">
+        <!-- ✅ Replace 2340000000000 with your real WhatsApp number -->
+        <a class="btn primary" href="https://wa.me/2340000000000?text=Hi%20Faybees!%20I%20want%20to%20place%20an%20order." target="_blank" rel="noreferrer">WhatsApp Order 💬</a>
+        <a class="btn cocoa" href="https://www.instagram.com/faybees._/" target="_blank" rel="noreferrer">Instagram ✨</a>
+        <!-- ✅ Replace with your real shop link if you have it -->
+        <a class="btn" href="#" onclick="alert('Add your shop link here (Bumpa/Linktree/website store).')">Shop 🛍️</a>
       </div>
 
-      <nav class="navlinks" aria-label="Primary">
-        <a href="#services">What we sell</a>
-        <a href="#how">How to order</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#contact">Contact</a>
-      </nav>
-
-      <a class="btn primary" href="#contact">Order now</a>
+      <div class="grid3">
+        <div class="mini"><b>Nationwide delivery</b><span>Courier dispatch + careful packaging</span></div>
+        <div class="mini"><b>Custom branding</b><span>Logo, colors, labels & inserts</span></div>
+        <div class="mini"><b>Bulk or retail</b><span>Small orders to wholesale quantities</span></div>
+      </div>
     </div>
-  </header>
 
-  <main class="wrap">
-    <section class="hero" id="top">
-      <div class="panel">
-        <div class="kicker">✨ Gift boxes • Branded boxes • Packaging essentials</div>
-        <h1>Packaging that makes your brand look expensive.</h1>
-        <p class="sub">
-          Faybees supplies <b>gift boxes</b>, <b>branded boxes</b>, and <b>packaging essentials</b> with <b>nationwide delivery</b>.
-          Fresh flowers also available.
-        </p>
+    <div class="card">
+      <div class="sectionHead" style="margin-top:0">
+        <h2>Quick Order</h2>
+        <p>Super easy ✨</p>
+      </div>
+      <div class="list">
+        <div class="li"><b>1)</b> Message on WhatsApp</div>
+        <div class="li"><b>2)</b> Tell us: item, size, quantity</div>
+        <div class="li"><b>3)</b> Share delivery city + landmark</div>
+        <div class="li"><b>4)</b> We confirm price → pay → dispatch</div>
+      </div>
+      <div class="pill">📍 Port Harcourt • Nigeria</div>
+      <div class="pill">🤍 Beyond Packaging</div>
+    </div>
+  </section>
+
+  <!-- SHOP / PRODUCTS -->
+  <section id="shop">
+    <div class="sectionHead">
+      <h2>What We Sell</h2>
+      <p>Girly, neat, premium finishes 💗</p>
+    </div>
+
+    <div class="tiles">
+      <div class="tile">
+        <h3>Gift Boxes 🎁</h3>
+        <p>Luxury gift boxes for birthdays, surprises, weddings, and special moments.</p>
+        <div class="pill">Best for gifting</div>
+      </div>
+      <div class="tile">
+        <h3>Branded Boxes 🧁</h3>
+        <p>Custom boxes with your logo so your brand looks premium and unforgettable.</p>
+        <div class="pill">Brand identity</div>
+      </div>
+      <div class="tile">
+        <h3>Packaging Essentials ✨</h3>
+        <p>Ribbons, wraps, stickers, inserts, fillers, and all your “final touch” items.</p>
+        <div class="pill">Business ready</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CUSTOM BRANDING -->
+  <section id="custom">
+    <div class="sectionHead">
+      <h2>Custom Branding</h2>
+      <p>Make customers say “wow” 🌸</p>
+    </div>
+
+    <div class="twoCol">
+      <div class="card">
+        <h3 style="margin:0 0 8px; color:var(--cocoa)">Branding options</h3>
+        <div class="list">
+          <div class="li"><b>Logo on box</b> (print/label)</div>
+          <div class="li"><b>Branded stickers</b> + thank-you cards</div>
+          <div class="li"><b>Ribbon + color matching</b> for your aesthetic</div>
+          <div class="li"><b>Insert cards</b> (care instructions, socials, etc.)</div>
+        </div>
+      </div>
+      <div class="card">
+        <h3 style="margin:0 0 8px; color:var(--cocoa)">What we need from you</h3>
+        <div class="list">
+          <div class="li"><b>Logo file</b> (PNG recommended)</div>
+          <div class="li"><b>Brand colors</b> (or tell us your vibe)</div>
+          <div class="li"><b>Quantity + deadline</b></div>
+          <div class="li"><b>Delivery location</b></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO ORDER -->
+  <section id="how">
+    <div class="sectionHead">
+      <h2>How to Order</h2>
+      <p>Fast and smooth 💌</p>
+    </div>
+
+    <div class="twoCol">
+      <div class="card">
+        <h3 style="margin:0 0 8px; color:var(--cocoa)">WhatsApp (fastest)</h3>
+        <p class="sub" style="margin-bottom:10px">Tap the template below to copy, then paste into WhatsApp.</p>
+
+        <div class="li copyBox" id="orderTemplate" title="Click to copy">
+          <b>ORDER TEMPLATE</b><br>
+          • Item(s):<br>
+          • Size/Color:<br>
+          • Quantity:<br>
+          • Branding? (Yes/No):<br>
+          • Delivery city + landmark:<br>
+          • Needed by (date):
+        </div>
+        <p id="copyMsg" style="margin:10px 0 0; color:var(--muted); font-weight:700"></p>
+      </div>
+
+      <div class="card">
+        <h3 style="margin:0 0 8px; color:var(--cocoa)">Delivery</h3>
+        <div class="list">
+          <div class="li"><b>Port Harcourt:</b> same/next day (when available)</div>
+          <div class="li"><b>Other states:</b> courier delivery</div>
+          <div class="li"><b>Bulk orders:</b> scheduled dispatch</div>
+          <div class="li"><b>Care:</b> packed neatly to avoid dents & damage</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <div class="sectionHead">
+      <h2>Gallery</h2>
+      <p>Add your real photos here 🌷</p>
+    </div>
+
+    <div class="gallery">
+      <div class="photo"><div class="label">Branded Box</div></div>
+      <div class="photo"><div class="label">Gift Box Set</div></div>
+      <div class="photo"><div class="label">Packaging Essentials</div></div>
+    </div>
+
+    <div class="card" style="margin-top:12px">
+      <b style="color:var(--cocoa)">Easy photo tip:</b>
+      <span style="color:var(--muted); font-weight:600">
+        Replace each “photo” box with an image later. If you want, upload 3 product photos here and I’ll insert them into the code for you.
+      </span>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews">
+    <div class="sectionHead">
+      <h2>Customer Love</h2>
+      <p>Paste real reviews later 💕</p>
+    </div>
+
+    <div class="tiles">
+      <div class="quote">
+        <p>“My boxes came out so neat and classy 😍 exactly what I wanted!”</p>
+        <b>— Customer</b>
+      </div>
+      <div class="quote">
+        <p>“Packaging made my brand look premium. Fast delivery too!”</p>
+        <b>— Customer</b>
+      </div>
+      <div class="quote">
+        <p>“The gift box was so cute, the finishing was perfect 💗”</p>
+        <b>— Customer</b>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="sectionHead">
+      <h2>FAQs</h2>
+      <p>Quick answers 🌸</p>
+    </div>
+
+    <div class="twoCol">
+      <div class="card">
+        <div class="list">
+          <div class="li"><b>Do you deliver nationwide?</b><br>Yes — we can send via courier.</div>
+          <div class="li"><b>Do you do custom branding?</b><br>Yes — logo, labels, stickers, inserts.</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="list">
+          <div class="li"><b>Can I order small quantities?</b><br>Yes — retail & bulk are available.</div>
+          <div class="li"><b>How long does it take?</b><br>Depends on quantity and customization.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="sectionHead">
+      <h2>Contact</h2>
+      <p>Let’s make it cute ✨</p>
+    </div>
+
+    <div class="twoCol">
+      <div class="card">
+        <h3 style="margin:0 0 8px; color:var(--cocoa)">Message us</h3>
+        <p class="sub" style="margin-bottom:10px">Fastest reply is WhatsApp.</p>
 
         <div class="ctaRow">
-          <!-- Replace the WhatsApp number below with your real one -->
-          <a class="btn primary" href="https://wa.me/2340000000000?text=Hi%20Faybees!%20I%20want%20to%20place%20an%20order." target="_blank" rel="noreferrer">
-            WhatsApp order
-          </a>
-          <a class="btn" href="https://www.instagram.com/faybees._/" target="_blank" rel="noreferrer">View Instagram</a>
-          <a class="btn" href="https://linktr.ee/faybees" target="_blank" rel="noreferrer">Shop / Link in bio</a>
+          <!-- ✅ Replace 2340000000000 with your real WhatsApp number -->
+          <a class="btn primary" href="https://wa.me/2340000000000?text=Hi%20Faybees!%20I%20want%20to%20place%20an%20order." target="_blank" rel="noreferrer">WhatsApp 💬</a>
+          <a class="btn cocoa" href="https://www.instagram.com/faybees._/" target="_blank" rel="noreferrer">Instagram ✨</a>
         </div>
 
-        <div class="stats" aria-label="Highlights">
-          <div class="stat"><b>Nationwide delivery</b><span>Fast dispatch + reliable courier</span></div>
-          <div class="stat"><b>Custom branding</b><span>Boxes & packaging with your logo</span></div>
-          <div class="stat"><b>Bulk + retail</b><span>Small quantities or wholesale</span></div>
+        <div class="list" style="margin-top:12px">
+          <div class="li"><b>Brand:</b> FAYBEES</div>
+          <div class="li"><b>Slogan:</b> Beyond Packaging</div>
+          <div class="li"><b>Location:</b> Port Harcourt, Nigeria</div>
+          <div class="li"><b>Delivery:</b> Nationwide</div>
         </div>
       </div>
 
-      <div class="panel">
-        <div class="sectionTitle" style="margin-top:0">
-          <h2 style="margin:0">Quick order</h2>
-          <p class="small">Takes under 1 minute</p>
-        </div>
-        <div class="list">
-          <div class="li"><b>1)</b> Tap “WhatsApp order”</div>
-          <div class="li"><b>2)</b> Send: item, size, quantity, delivery city</div>
-          <div class="li"><b>3)</b> We confirm price + delivery</div>
-          <div class="li"><b>4)</b> Payment → dispatch</div>
-        </div>
-        <div class="pill">📍 Port Harcourt • 🇳🇬 Nigeria</div>
-        <div class="pill">🧾 Registered • Trusted</div>
+      <div class="card">
+        <h3 style="margin:0 0 8px; color:var(--cocoa)">Cute banner note</h3>
+        <p class="sub" style="margin-bottom:10px">
+          If you want a <b>real flower banner image</b> (like roses / pink florals) behind the header,
+          upload the banner you like (or tell me “pink roses”, “peonies”, etc.) and I’ll generate a matching banner style for this site.
+        </p>
+        <div class="pill">🎀 Soft girly theme</div>
+        <div class="pill">🌸 Floral accents</div>
+        <div class="pill">🤎 Cocoa + cream brand match</div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="services">
-      <div class="sectionTitle">
-        <h2>What we sell</h2>
-        <p>Premium, neat, and picture-perfect packaging</p>
-      </div>
+  <footer>
+    © <span id="year"></span> <b>FAYBEES</b>. All rights reserved. • Beyond Packaging
+  </footer>
+</main>
 
-      <div class="grid">
-        <div class="card">
-          <h3>Gift boxes</h3>
-          <p>Luxury gift boxes for birthdays, valentine, weddings, surprises, and brand gifting.</p>
-          <div class="pill">Best for gifting</div>
-        </div>
-        <div class="card">
-          <h3>Branded boxes</h3>
-          <p>Custom boxes with your logo so your customers remember your business.</p>
-          <div class="pill">Brand identity</div>
-        </div>
-        <div class="card">
-          <h3>Packaging essentials</h3>
-          <p>Everything you need to pack cleanly: wraps, stickers, ribbons, inserts, and more.</p>
-          <div class="pill">For businesses</div>
-        </div>
-      </div>
-    </section>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
 
-    <section id="how">
-      <div class="sectionTitle">
-        <h2>How it works</h2>
-        <p>Simple steps from order to delivery</p>
-      </div>
-
-      <div class="twoCol">
-        <div class="card">
-          <h3>Ordering</h3>
-          <p class="small">Send your request on WhatsApp or shop via your link-in-bio.</p>
-          <div class="list">
-            <div class="li"><b>Include:</b> product + size + quantity</div>
-            <div class="li"><b>Branding:</b> upload logo (PNG preferred)</div>
-            <div class="li"><b>Delivery:</b> city + nearest landmark</div>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>Delivery</h3>
-          <p class="small">Nationwide delivery available. Dispatch time depends on quantity + customization.</p>
-          <div class="list">
-            <div class="li"><b>Port Harcourt:</b> same/next day (when available)</div>
-            <div class="li"><b>Other states:</b> courier delivery</div>
-            <div class="li"><b>Bulk orders:</b> scheduled dispatch</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="gallery">
-      <div class="sectionTitle">
-        <h2>Gallery</h2>
-        <p>Replace these with your real product photos</p>
-      </div>
-
-      <div class="grid">
-        <div class="card"><h3>Branded Box</h3><p>Upload a photo here.</p></div>
-        <div class="card"><h3>Gift Box Set</h3><p>Upload a photo here.</p></div>
-        <div class="card"><h3>Packaging Essentials</h3><p>Upload a photo here.</p></div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="sectionTitle">
-        <h2>Contact</h2>
-        <p>Let’s package your business beautifully</p>
-      </div>
-
-      <div class="twoCol">
-        <div class="card">
-          <h3>Message us</h3>
-          <p class="small">Fastest response is WhatsApp.</p>
-
-          <!-- Replace WhatsApp number below with your real one -->
-          <div class="ctaRow">
-            <a class="btn primary" href="https://wa.me/2340000000000?text=Hi%20Faybees!%20I%20want%20to%20place%20an%20order." target="_blank" rel="noreferrer">WhatsApp</a>
-            <a class="btn" href="https://www.instagram.com/faybees._/" target="_blank" rel="noreferrer">Instagram</a>
-            <a class="btn" href="https://linktr.ee/faybees" target="_blank" rel="noreferrer">Shop</a>
-          </div>
-
-          <div class="list" style="margin-top:14px">
-            <div class="li"><b>Business name:</b> Faybees</div>
-            <div class="li"><b>Location:</b> Port Harcourt, Nigeria</div>
-            <div class="li"><b>Delivery:</b> Nationwide</div>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>Copy-paste order template</h3>
-          <p class="small">Tap to copy and send on WhatsApp.</p>
-          <div class="li copy" id="orderTemplate" title="Tap to copy">
-            <b>ORDER TEMPLATE</b><br/>
-            • Item(s):<br/>
-            • Size/Color:<br/>
-            • Quantity:<br/>
-            • Branding? (Yes/No):<br/>
-            • Delivery city + landmark:<br/>
-            • Needed by (date):
-          </div>
-          <p class="small" id="copyMsg" style="margin-top:10px; color:var(--muted)"></p>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      <div class="small">
-        © <span id="year"></span> Faybees. All rights reserved.
-        <span style="opacity:.7">•</span>
-        Built for @faybees._
-      </div>
-    </footer>
-  </main>
-
-  <script>
-    // Footer year
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // Tap-to-copy order template
-    const box = document.getElementById("orderTemplate");
-    const msg = document.getElementById("copyMsg");
-    box.addEventListener("click", async () => {
-      try {
-        await navigator.clipboard.writeText(box.innerText.replace("ORDER TEMPLATE", "").trim());
-        msg.textContent = "Copied ✅ Paste it into WhatsApp.";
-      } catch {
-        msg.textContent = "Copy not supported on this browser. Long-press to copy.";
-      }
-    });
-  </script>
+  // Tap/click to copy order template
+  const box = document.getElementById("orderTemplate");
+  const msg = document.getElementById("copyMsg");
+  box.addEventListener("click", async () => {
+    try {
+      const text = box.innerText.replace("ORDER TEMPLATE", "").trim();
+      await navigator.clipboard.writeText(text);
+      msg.textContent = "Copied ✅ Now paste it into WhatsApp.";
+    } catch (e) {
+      msg.textContent = "Copy failed. Try selecting the text and copying manually.";
+    }
+  });
+</script>
 </body>
 </html>
