@@ -13,25 +13,25 @@
 
   <style>
     :root{
-      /* Brown + Beige ONLY (logo-matching) */
+      /* Brown + Beige ONLY */
       --beige-1:#f6efe7;
       --beige-2:#efe4d8;
       --beige-3:#fff7f0;
 
-      --brown-1:#2f1b14;  /* deep */
-      --brown-2:#4a2a20;  /* cocoa */
-      --brown-3:#7a4b35;  /* warm */
-      --brown-4:#b77b57;  /* tan */
+      --brown-1:#2f1b14;
+      --brown-2:#4a2a20;
+      --brown-3:#7a4b35;
+      --brown-4:#b77b57;
 
-      --text:#2f1b14;
+      --text:var(--brown-1);
       --muted:rgba(47,27,20,.72);
       --line:rgba(122,75,53,.25);
       --shadow:0 18px 60px rgba(47,27,20,.14);
       --radius:22px;
       --max:1100px;
 
-      /* Media filter to keep uploads brown/beige even if they contain other colors */
-      --media-filter: sepia(1) saturate(0.55) hue-rotate(-12deg) contrast(1.05);
+      /* Keeps uploaded media in warm brown/beige tones */
+      --media-filter: sepia(1) saturate(.55) hue-rotate(-12deg) contrast(1.05);
     }
 
     *{box-sizing:border-box}
@@ -51,6 +51,7 @@
     img, video{max-width:100%; display:block}
 
     .wrap{max-width:var(--max); margin:0 auto; padding:18px 16px 80px;}
+    section{scroll-margin-top:92px;}
 
     /* Header */
     header{
@@ -75,8 +76,8 @@
       min-width: 230px;
     }
     .brandLogo{
-      width:46px; height:46px;
-      border-radius: 16px;
+      width:50px; height:50px;
+      border-radius:18px;
       overflow:hidden;
       border:1px solid var(--line);
       background: var(--beige-3);
@@ -128,7 +129,11 @@
       border-color: rgba(122,75,53,.42);
       background: rgba(255,247,240,.92);
     }
+    @media (max-width: 920px){
+      nav{display:none;}
+    }
 
+    /* Social icon buttons */
     .social{
       display:flex;
       gap:8px;
@@ -151,11 +156,9 @@
       border-color: rgba(122,75,53,.42);
       background: rgba(255,247,240,.92);
     }
-    /* “Logos” for socials — custom brown/beige SVG icons */
     .iconbtn svg{width:19px; height:19px; fill: var(--brown-2);}
 
-    /* Cards / sections */
-    section{scroll-margin-top:92px;}
+    /* Card / sections */
     .card{
       border:1px solid var(--line);
       border-radius: var(--radius);
@@ -163,6 +166,7 @@
       box-shadow: var(--shadow);
       backdrop-filter: blur(10px);
     }
+    .panel{padding:18px;}
 
     .hero{
       margin-top:16px;
@@ -177,10 +181,24 @@
       align-items:stretch;
     }
     @media (max-width: 920px){
-      nav{display:none;}
       .heroGrid{grid-template-columns:1fr;}
     }
 
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,247,240,.70);
+      color: var(--brown-2);
+      font-weight:900;
+      letter-spacing:.10em;
+      text-transform:uppercase;
+      font-size:12px;
+      margin-bottom:12px;
+    }
     h1{
       margin:0 0 8px;
       font-family:"Playfair Display", serif;
@@ -216,6 +234,7 @@
       text-transform:uppercase;
       font-size:12px;
       transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      cursor:pointer;
     }
     .btn:hover{transform: translateY(-1px); border-color: rgba(122,75,53,.42); background: rgba(255,247,240,.96);}
     .btn.primary{
@@ -223,25 +242,6 @@
       background: linear-gradient(135deg, var(--brown-4), var(--brown-2));
       color: var(--beige-3);
       box-shadow: 0 18px 55px rgba(47,27,20,.18);
-    }
-
-    .panel{
-      padding:18px;
-    }
-    .kicker{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:10px 12px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background: rgba(255,247,240,.70);
-      color: var(--brown-2);
-      font-weight:900;
-      letter-spacing:.10em;
-      text-transform:uppercase;
-      font-size:12px;
-      margin-bottom:12px;
     }
 
     .sectionHead{
@@ -262,7 +262,17 @@
     }
     .sectionHead p{margin:0; color: var(--muted); font-weight:700;}
 
-    /* Brand highlights (attached images) */
+    .note{
+      margin:0;
+      color: var(--muted);
+      font-weight:700;
+      line-height:1.55;
+      font-size:13px;
+      border-left: 3px solid rgba(122,75,53,.35);
+      padding-left:12px;
+    }
+
+    /* Highlights grid (images you uploaded) */
     .highlights{
       display:grid;
       grid-template-columns: repeat(3, 1fr);
@@ -278,12 +288,14 @@
       background: rgba(255,247,240,.78);
       box-shadow: var(--shadow);
       position:relative;
+      min-height: 250px;
     }
     .mediaCard img{
       width:100%;
       height: 360px;
       object-fit:cover;
       filter: var(--media-filter);
+      background: rgba(47,27,20,.04);
     }
     .mediaLabel{
       position:absolute;
@@ -297,6 +309,17 @@
       letter-spacing:.08em;
       text-transform:uppercase;
       font-size:12px;
+    }
+    .missing{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:18px;
+      height:360px;
+      color:var(--muted);
+      font-weight:800;
+      letter-spacing:.08em;
+      text-transform:uppercase;
     }
 
     /* Form */
@@ -324,23 +347,12 @@
       border-color: rgba(122,75,53,.55);
       box-shadow: 0 0 0 4px rgba(183,123,87,.25);
     }
-
     .row2{
       display:grid;
       grid-template-columns: 1fr 1fr;
       gap:12px;
     }
     @media (max-width: 560px){ .row2{grid-template-columns:1fr;} }
-
-    .note{
-      margin:0;
-      color: var(--muted);
-      font-weight:700;
-      line-height:1.55;
-      font-size:13px;
-      border-left: 3px solid rgba(122,75,53,.35);
-      padding-left:12px;
-    }
 
     /* Inspiration preview */
     .previewGrid{
@@ -378,7 +390,7 @@
       text-transform:uppercase;
     }
 
-    /* Videos section */
+    /* Videos */
     .videoGrid{
       display:grid;
       grid-template-columns: 1fr 1fr;
@@ -393,13 +405,14 @@
       background: rgba(255,247,240,.78);
       box-shadow: var(--shadow);
       position:relative;
+      min-height: 240px;
     }
     .videoCard video{
       width:100%;
       height: 360px;
       object-fit:cover;
       filter: var(--media-filter);
-      background: rgba(0,0,0,.05);
+      background: rgba(47,27,20,.04);
     }
     .videoBadge{
       position:absolute;
@@ -413,6 +426,7 @@
       letter-spacing:.08em;
       text-transform:uppercase;
       font-size:12px;
+      z-index:2;
     }
 
     footer{
@@ -430,7 +444,7 @@
       inset:0;
       pointer-events:none;
       z-index:2;
-      opacity:.28;
+      opacity:.26;
       filter: saturate(.9);
     }
     .floater{
@@ -532,8 +546,8 @@
     <div class="topbar">
       <div class="brand">
         <div class="brandLogo">
-          <!-- ✅ Your logo -->
-          <img src="assets/logo.jpg" alt="FAYBEES logo">
+          <!-- Logo loads automatically from /assets -->
+          <img id="logoImg" alt="FAYBEES logo">
         </div>
         <div class="brandText">
           <strong>FAYBEES</strong>
@@ -547,7 +561,7 @@
         <a class="pill" href="#order">Order</a>
       </nav>
 
-      <!-- ✅ Social “logos” with your links -->
+      <!-- Social “logos” -->
       <div class="social" aria-label="Social links">
         <!-- Instagram -->
         <a class="iconbtn" href="https://www.instagram.com/faybees._?igsh=Y3JieTF0aTVwNGNy" target="_blank" rel="noopener" aria-label="Instagram">
@@ -588,12 +602,11 @@
           <div class="kicker">Custom Gifting + Packaging Materials</div>
           <h1>FAYBEES</h1>
           <p class="sub">
-            Custom gifting and packaging materials — clean finishing, premium look, and consistent branding.
+            This website is for <b>custom gifting</b> and <b>packaging materials</b> only.
             <br><br>
             <b>About:</b> we make and supply packaging essentials .
           </p>
 
-          <!-- ✅ No “WhatsApp Order” button here (order form is the ONLY way) -->
           <div class="ctaRow">
             <a class="btn primary" href="#order">Go to Order Form</a>
             <a class="btn" href="#highlights">See Highlights</a>
@@ -602,47 +615,52 @@
         </div>
 
         <div class="panel">
-          <div class="kicker">Important</div>
+          <div class="kicker">Ordering Rules</div>
           <p class="note">
-            Orders can only be placed through the <b>Order Form</b> below.
-            After you submit, WhatsApp opens with your order message ready to send.
+            Orders can only be placed through the <b>Order Form</b>.
+            When you submit, WhatsApp opens with your order message ready to send.
             <br><br>
-            If you upload inspiration photos, you will need to <b>attach them manually in WhatsApp</b> (WhatsApp doesn’t allow auto-attaching files from a website link).
+            If you upload inspiration photos, you’ll need to <b>attach them manually in WhatsApp</b> (WhatsApp doesn’t allow auto-attaching images from a website link).
           </p>
         </div>
       </div>
     </section>
 
-    <!-- ATTACHED IMAGES / HIGHLIGHTS -->
+    <!-- HIGHLIGHTS -->
     <section id="highlights">
       <div class="sectionHead">
         <h2>Brand Highlights</h2>
-        <p>These display immediately on page load</p>
+        <p>Images display immediately on load</p>
       </div>
 
       <div class="highlights">
         <div class="mediaCard">
-          <img src="assets/delivery-days.jpg" alt="FAYBEES Delivery Days">
+          <img class="autoImg" data-sources="assets/IMG_7707.jpg|assets/IMG_7707.JPG|assets/delivery-days.jpg" alt="Delivery Days">
           <div class="mediaLabel">Delivery Days</div>
         </div>
+
         <div class="mediaCard">
-          <img src="assets/box-sizes.jpg" alt="Box Sizes">
+          <img class="autoImg" data-sources="assets/IMG_7711.jpg|assets/IMG_7711.JPG|assets/box-sizes.jpg" alt="Box Sizes">
           <div class="mediaLabel">Box Sizes</div>
         </div>
+
         <div class="mediaCard">
-          <img src="assets/how-to-order.png" alt="How to Order">
+          <img class="autoImg" data-sources="assets/IMG_7713.PNG|assets/IMG_7713.png|assets/how-to-order.png" alt="How to Order">
           <div class="mediaLabel">How to Order</div>
         </div>
+
         <div class="mediaCard">
-          <img src="assets/deliveries.jpg" alt="Deliveries">
+          <img class="autoImg" data-sources="assets/IMG_7709.jpg|assets/IMG_7709.JPG|assets/deliveries.jpg" alt="Deliveries">
           <div class="mediaLabel">Deliveries</div>
         </div>
+
         <div class="mediaCard">
-          <img src="assets/fresh-flowers.jpg" alt="Fresh Flowers">
+          <img class="autoImg" data-sources="assets/IMG_7708.jpg|assets/IMG_7708.JPG|assets/fresh-flowers.jpg" alt="Custom Gifting">
           <div class="mediaLabel">Custom Gifting</div>
         </div>
+
         <div class="mediaCard">
-          <img src="assets/reviews.jpg" alt="Reviews">
+          <img class="autoImg" data-sources="assets/IMG_7710.jpg|assets/IMG_7710.JPG|assets/reviews.jpg" alt="Reviews">
           <div class="mediaLabel">Reviews</div>
         </div>
       </div>
@@ -652,23 +670,21 @@
     <section id="videos">
       <div class="sectionHead">
         <h2>Videos</h2>
-        <p>Auto-plays when you scroll to it</p>
+        <p>They play when you scroll to them</p>
       </div>
 
       <div class="videoGrid">
         <div class="videoCard">
           <div class="videoBadge">Brand Video</div>
-          <video class="autoVideo" muted playsinline preload="metadata" controls>
-            <source src="assets/video-1.mp4" type="video/mp4">
-            Your browser does not support the video tag.
+          <video class="autoVideo" muted playsinline preload="metadata" controls
+            data-sources="assets/video-1.mp4|assets/v1c044g50000d64u1qvog65g17e0m7s0.MP4|assets/v1c044g50000d64u1qvog65g17e0m7s0.mp4">
           </video>
         </div>
 
         <div class="videoCard">
           <div class="videoBadge">Brand Video</div>
-          <video class="autoVideo" muted playsinline preload="metadata" controls>
-            <source src="assets/video-2.mov" type="video/quicktime">
-            Your browser does not support the video tag.
+          <video class="autoVideo" muted playsinline preload="metadata" controls
+            data-sources="assets/video-2.mp4|assets/v14044g50000d632k47og65hr7h5l65g.mov|assets/v14044g50000d632k47og65hr7h5l65g.MOV|assets/video-2.mov">
           </video>
         </div>
       </div>
@@ -678,13 +694,13 @@
     <section id="order">
       <div class="sectionHead">
         <h2>Order Form</h2>
-        <p>Submits directly to WhatsApp</p>
+        <p>Sent directly to WhatsApp</p>
       </div>
 
       <div class="card panel">
         <p class="note">
           This form is the only way to place an order.
-          When you click <b>Send Order to WhatsApp</b>, WhatsApp will open with your order details filled in.
+          When you click <b>Send Order to WhatsApp</b>, WhatsApp opens with your order details filled in.
         </p>
 
         <form id="orderForm">
@@ -695,7 +711,7 @@
             </div>
             <div>
               <label for="phone">Phone Number</label>
-              <input id="phone" type="tel" placeholder="0803 000 0000" required>
+              <input id="phone" type="tel" placeholder="0803 898 7066" required>
             </div>
           </div>
 
@@ -711,15 +727,15 @@
           </div>
 
           <div>
-            <label for="details">Order Details (explain exactly what you need)</label>
-            <textarea id="details" placeholder="Sizes, colors, finishing, branding notes, deadline, delivery location, etc." required></textarea>
+            <label for="details">Order Details (exactly what is needed)</label>
+            <textarea id="details" placeholder="Sizes, colors, box type, finishing, branding notes, deadline, delivery location, etc." required></textarea>
           </div>
 
           <div>
             <label for="inspo">Inspiration Photos (optional)</label>
             <input id="inspo" type="file" accept="image/*" multiple>
             <p class="note" style="margin-top:10px;">
-              Your photos will preview below. After the WhatsApp message opens, attach the photos manually in WhatsApp.
+              Photos will preview below. After WhatsApp opens, attach them manually in WhatsApp.
             </p>
             <div id="previewGrid" class="previewGrid" aria-live="polite"></div>
           </div>
@@ -737,11 +753,118 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // WhatsApp international format for wa.me
-    // 08038987066 => +2348038987066
+    // WhatsApp wa.me format: Nigeria number +2348038987066
     const WHATSAPP_INTL = "2348038987066";
 
-    // Inspiration previews (client-side only)
+    // ===========
+    // AUTO-LOADER (prevents broken images/videos if filenames differ)
+    // ===========
+    async function urlExists(url){
+      try{
+        const res = await fetch(url, { method:"HEAD", cache:"no-store" });
+        return res.ok;
+      }catch(e){
+        return false;
+      }
+    }
+
+    async function setFirstWorkingImage(imgEl, sources){
+      for (const src of sources){
+        if (await urlExists(src)){
+          imgEl.src = src;
+          return true;
+        }
+      }
+      // fallback UI
+      const parent = imgEl.closest(".mediaCard") || imgEl.parentElement;
+      if (parent){
+        const box = document.createElement("div");
+        box.className = "missing";
+        box.textContent = "IMAGE NOT FOUND IN /assets";
+        imgEl.replaceWith(box);
+      }
+      return false;
+    }
+
+    async function setFirstWorkingVideo(videoEl, sources){
+      for (const src of sources){
+        if (await urlExists(src)){
+          const source = document.createElement("source");
+          source.src = src;
+
+          // guess type
+          const lower = src.toLowerCase();
+          if (lower.endsWith(".mp4")) source.type = "video/mp4";
+          else if (lower.endsWith(".mov")) source.type = "video/quicktime";
+          else source.type = "video/mp4";
+
+          videoEl.appendChild(source);
+          videoEl.load();
+          return true;
+        }
+      }
+      // fallback UI
+      const parent = videoEl.closest(".videoCard") || videoEl.parentElement;
+      if (parent){
+        const box = document.createElement("div");
+        box.className = "missing";
+        box.style.height = "360px";
+        box.textContent = "VIDEO NOT FOUND IN /assets";
+        videoEl.replaceWith(box);
+      }
+      return false;
+    }
+
+    // ===========
+    // LOGO AUTO LOAD
+    // ===========
+    (async () => {
+      const logo = document.getElementById("logoImg");
+      const candidates = [
+        "assets/faybees-logo.jpg",
+        "assets/faybees-logo.jpeg",
+        "assets/FAYBEES-1..jpg",
+        "assets/FAYBEES-1..jpeg",
+        "assets/FAYBEES-1.jpg",
+        "assets/FAYBEES-1.jpeg",
+        "assets/logo.jpg",
+        "assets/logo.jpeg"
+      ];
+      for (const src of candidates){
+        if (await urlExists(src)){
+          logo.src = src;
+          return;
+        }
+      }
+      // last resort
+      logo.alt = "Upload your logo into /assets (e.g. faybees-logo.jpg)";
+    })();
+
+    // ===========
+    // HIGHLIGHT IMAGES AUTO LOAD
+    // ===========
+    (async () => {
+      const imgs = document.querySelectorAll(".autoImg");
+      for (const img of imgs){
+        const sources = (img.dataset.sources || "").split("|").map(s => s.trim()).filter(Boolean);
+        await setFirstWorkingImage(img, sources);
+      }
+    })();
+
+    // ===========
+    // VIDEOS AUTO LOAD
+    // ===========
+    (async () => {
+      const vids = document.querySelectorAll(".autoVideo");
+      for (const v of vids){
+        const sources = (v.dataset.sources || "").split("|").map(s => s.trim()).filter(Boolean);
+        await setFirstWorkingVideo(v, sources);
+      }
+    })();
+
+    // ===========
+    // INSPIRATION PREVIEWS
+    // ===========
     const inspoInput = document.getElementById("inspo");
     const previewGrid = document.getElementById("previewGrid");
     let inspoCount = 0;
@@ -766,7 +889,9 @@
       });
     });
 
-    // Order form -> WhatsApp message
+    // ===========
+    // ORDER FORM -> WHATSAPP
+    // ===========
     document.getElementById("orderForm").addEventListener("submit", (e) => {
       e.preventDefault();
 
@@ -794,13 +919,15 @@ Inspiration photos attached? ${inspoCount > 0 ? "Yes (I will attach manually)" :
       window.open(url, "_blank", "noopener,noreferrer");
     });
 
-    // Auto-play videos on scroll (plays when at least 60% visible)
-    const videos = document.querySelectorAll(".autoVideo");
+    // ===========
+    // AUTOPLAY VIDEOS ON SCROLL
+    // ===========
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         const v = entry.target;
+        if (!(v instanceof HTMLVideoElement)) return;
+
         if (entry.isIntersecting && entry.intersectionRatio >= 0.6) {
-          // Try autoplay (mobile may require user interaction; muted + playsinline helps)
           v.play().catch(() => {});
         } else {
           v.pause();
@@ -808,7 +935,10 @@ Inspiration photos attached? ${inspoCount > 0 ? "Yes (I will attach manually)" :
       });
     }, { threshold: [0.0, 0.25, 0.6, 1.0] });
 
-    videos.forEach(v => observer.observe(v));
+    // Wait a moment for videos to load sources, then observe
+    setTimeout(() => {
+      document.querySelectorAll(".autoVideo").forEach(v => observer.observe(v));
+    }, 600);
   </script>
 </body>
 </html>
