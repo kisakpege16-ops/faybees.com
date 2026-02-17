@@ -46,7 +46,6 @@
       font-family:"Plus Jakarta Sans", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       color:var(--ink);
 
-      /* Cute girly background with soft gradients */
       background:
         radial-gradient(700px 500px at 15% 10%, rgba(255,127,176,.20), transparent 55%),
         radial-gradient(700px 500px at 80% 20%, rgba(233,214,255,.35), transparent 55%),
@@ -82,23 +81,23 @@
     .brand{
       display:flex; align-items:center; gap:10px;
     }
+
+    /* ✅ Replaced badge with your real logo */
     .logoBadge{
       width:42px; height:42px; border-radius:999px;
-      background: radial-gradient(circle at 30% 30%, rgba(255,214,230,.9), rgba(255,255,255,.3)),
-                  linear-gradient(135deg, var(--cocoa), var(--cocoa-2));
       border:2px solid rgba(255,255,255,.7);
       box-shadow: 0 14px 40px rgba(75,42,34,.18);
-      position:relative;
       overflow:hidden;
+      background: rgba(255,255,255,.85);
+      display:grid;
+      place-items:center;
     }
-    .logoBadge:before{
-      content:"";
-      position:absolute; inset:-30px;
-      background:
-        radial-gradient(circle at 20% 35%, rgba(255,255,255,.22) 0 20%, transparent 21%),
-        radial-gradient(circle at 65% 70%, rgba(255,214,230,.18) 0 18%, transparent 19%);
-      transform: rotate(14deg);
+    .logoBadge img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
     }
+
     .brandText strong{
       display:block;
       font-family:"Playfair Display", serif;
@@ -112,6 +111,7 @@
       color:var(--muted);
       margin-top:2px;
     }
+
     .navlinks{display:flex; gap:10px; flex-wrap:wrap}
     .navlinks a{
       font-weight:700;
@@ -153,6 +153,31 @@
       color: var(--cream);
       box-shadow: 0 14px 36px rgba(75,42,34,.22);
     }
+
+    /* ✅ Social icon buttons (same color scheme) */
+    .social{
+      display:flex;
+      gap:8px;
+      align-items:center;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .iconbtn{
+      width:40px;height:40px;
+      border-radius:999px;
+      border:1px solid rgba(75,42,34,.12);
+      background: rgba(255,255,255,.75);
+      box-shadow: 0 10px 28px rgba(75,42,34,.10);
+      display:grid;
+      place-items:center;
+    }
+    .iconbtn:hover{
+      transform: translateY(-1px);
+      transition:.18s ease;
+      border-color: rgba(255,79,150,.25);
+      box-shadow: 0 12px 28px rgba(255,79,150,.10);
+    }
+    .iconbtn svg{width:18px;height:18px; fill: var(--cocoa);}
 
     /* Floral banner (original SVG style) */
     .floralBanner{
@@ -353,6 +378,30 @@
     .quote p{margin:0; color:var(--muted); font-weight:600}
     .quote b{display:block; margin-top:10px; color:var(--cocoa)}
 
+    /* ✅ Order form inputs */
+    .field{
+      display:grid;
+      gap:8px;
+      margin-top:10px;
+    }
+    label{
+      font-weight:800;
+      color:var(--cocoa);
+      font-size:13px;
+      letter-spacing:.02em;
+    }
+    input, textarea{
+      width:100%;
+      padding:12px 12px;
+      border-radius:18px;
+      border:1px solid rgba(75,42,34,.12);
+      background: rgba(255,255,255,.78);
+      font-family:inherit;
+      font-size:14px;
+      outline:none;
+    }
+    textarea{min-height:110px; resize:vertical;}
+
     footer{
       margin-top:26px;
       padding-top:18px;
@@ -368,7 +417,10 @@
 <header>
   <div class="nav">
     <div class="brand">
-      <div class="logoBadge" aria-hidden="true"></div>
+      <div class="logoBadge">
+        <!-- ✅ Put your logo here -->
+        <img src="assets/faybees-logo.jpg" alt="FAYBEES logo">
+      </div>
       <div class="brandText">
         <strong>FAYBEES</strong>
         <span>Beyond Packaging</span>
@@ -379,11 +431,43 @@
       <a href="#shop">Shop</a>
       <a href="#custom">Custom Branding</a>
       <a href="#how">How to Order</a>
+      <a href="#order">Order</a>
       <a href="#gallery">Gallery</a>
       <a href="#contact">Contact</a>
     </nav>
 
-    <a class="btn primary" href="#contact">Order 💌</a>
+    <!-- ✅ Social icon links (same color scheme) -->
+    <div class="social" aria-label="Social links">
+      <!-- Instagram -->
+      <a class="iconbtn" href="https://www.instagram.com/faybees._?igsh=Y3JieTF0aTVwNGNy" target="_blank" rel="noreferrer" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 4a6 6 0 1 1 0 12a6 6 0 0 1 0-12zm0 2a4 4 0 1 0 0 8a4 4 0 0 0 0-8zm6.4-2.2a1.2 1.2 0 1 1-2.4 0a1.2 1.2 0 0 1 2.4 0z"/>
+        </svg>
+      </a>
+
+      <!-- TikTok -->
+      <a class="iconbtn" href="https://www.tiktok.com/@faybees._?_r=1&_t=ZP-940QfztdvDy" target="_blank" rel="noreferrer" aria-label="TikTok">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M15 3c.4 2.7 2.3 4.8 5 5.1V11c-1.9-.1-3.7-.7-5-1.8V15a6 6 0 1 1-6-6c.3 0 .7 0 1 .1v3.1c-.3-.2-.6-.2-1-.2a3 3 0 1 0 3 3V3h3z"/>
+        </svg>
+      </a>
+
+      <!-- Gmail -->
+      <a class="iconbtn" href="mailto:faybees01@gmail.com" aria-label="Email">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z"/>
+        </svg>
+      </a>
+
+      <!-- WhatsApp -->
+      <a class="iconbtn" href="https://wa.me/2348038987066" target="_blank" rel="noreferrer" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 2a10 10 0 0 0-8.7 14.9L2 22l5.3-1.4A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3.1.8.8-3-.2-.3A8 8 0 1 1 12 20zm4.6-5.4c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1-2-.9-3.3-2.9-3.4-3.1-.1-.2 0-.4.1-.5l.6-.7c.1-.2.1-.4.1-.6s-.6-1.4-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.4-.7.8-1 1.8-.9 2.8.1 1.7 1.1 3.4 2.4 4.6 1.3 1.2 3 2.2 4.8 2.2 1 0 2-.3 2.8-1 .2-.2.4-.5.4-.7v-.5c0-.2-.1-.4-.3-.5z"/>
+        </svg>
+      </a>
+
+      <a class="btn primary" href="#order">Order 💌</a>
+    </div>
   </div>
 </header>
 
@@ -391,7 +475,6 @@
 
   <!-- Cute floral banner -->
   <div class="floralBanner glass">
-    <!-- Floral SVG pattern (original) -->
     <svg viewBox="0 0 1200 300" preserveAspectRatio="none" aria-hidden="true">
       <defs>
         <linearGradient id="petal" x1="0" x2="1">
@@ -399,8 +482,6 @@
           <stop offset="1" stop-color="#e9d6ff"/>
         </linearGradient>
       </defs>
-
-      <!-- Simple flower doodles -->
       <g fill="none" stroke="url(#petal)" stroke-width="4" stroke-linecap="round" opacity="0.9">
         <path d="M80,220 C120,170 160,170 200,220" />
         <path d="M170,235 C180,210 190,210 200,235" />
@@ -409,7 +490,6 @@
         <path d="M820,110 C850,70 900,70 930,110" />
         <path d="M1040,220 C1070,170 1120,170 1150,220" />
       </g>
-
       <g fill="rgba(255,127,176,0.35)">
         <circle cx="170" cy="235" r="10"/>
         <circle cx="360" cy="70" r="10"/>
@@ -417,7 +497,6 @@
         <circle cx="875" cy="110" r="10"/>
         <circle cx="1095" cy="220" r="10"/>
       </g>
-
       <g fill="rgba(75,42,34,0.14)">
         <circle cx="120" cy="200" r="8"/>
         <circle cx="620" cy="185" r="8"/>
@@ -445,11 +524,10 @@
       </p>
 
       <div class="ctaRow">
-        <!-- ✅ Replace 2340000000000 with your real WhatsApp number -->
-        <a class="btn primary" href="https://wa.me/2340000000000?text=Hi%20Faybees!%20I%20want%20to%20place%20an%20order." target="_blank" rel="noreferrer">WhatsApp Order 💬</a>
-        <a class="btn cocoa" href="https://www.instagram.com/faybees._/" target="_blank" rel="noreferrer">Instagram ✨</a>
-        <!-- ✅ Replace with your real shop link if you have it -->
-        <a class="btn" href="#" onclick="alert('Add your shop link here (Bumpa/Linktree/website store).')">Shop 🛍️</a>
+        <!-- ✅ Real WhatsApp -->
+        <a class="btn primary" href="https://wa.me/2348038987066?text=Hi%20Faybees!%20I%20want%20to%20place%20an%20order." target="_blank" rel="noreferrer">WhatsApp Order 💬</a>
+        <a class="btn cocoa" href="https://www.instagram.com/faybees._?igsh=Y3JieTF0aTVwNGNy" target="_blank" rel="noreferrer">Instagram ✨</a>
+        <a class="btn" href="#order">Order Form 🛍️</a>
       </div>
 
       <div class="grid3">
@@ -465,9 +543,9 @@
         <p>Super easy ✨</p>
       </div>
       <div class="list">
-        <div class="li"><b>1)</b> Message on WhatsApp</div>
-        <div class="li"><b>2)</b> Tell us: item, size, quantity</div>
-        <div class="li"><b>3)</b> Share delivery city + landmark</div>
+        <div class="li"><b>1)</b> Fill the order form</div>
+        <div class="li"><b>2)</b> Submit → WhatsApp opens</div>
+        <div class="li"><b>3)</b> Send message</div>
         <div class="li"><b>4)</b> We confirm price → pay → dispatch</div>
       </div>
       <div class="pill">📍 Port Harcourt • Nigeria</div>
@@ -498,6 +576,17 @@
         <p>Ribbons, wraps, stickers, inserts, fillers, and all your “final touch” items.</p>
         <div class="pill">Business ready</div>
       </div>
+    </div>
+  </section>
+
+  <!-- ✅ ABOUT (added with your exact text) -->
+  <section id="about">
+    <div class="sectionHead">
+      <h2>About</h2>
+      <p>FAYBEES</p>
+    </div>
+    <div class="card">
+      <p class="sub" style="margin:0;">we make and supply packaging essentials .</p>
     </div>
   </section>
 
@@ -552,6 +641,10 @@
           • Needed by (date):
         </div>
         <p id="copyMsg" style="margin:10px 0 0; color:var(--muted); font-weight:700"></p>
+
+        <div class="ctaRow" style="margin-top:12px;">
+          <a class="btn primary" href="https://wa.me/2348038987066" target="_blank" rel="noreferrer">Open WhatsApp 💬</a>
+        </div>
       </div>
 
       <div class="card">
@@ -563,6 +656,56 @@
           <div class="li"><b>Care:</b> packed neatly to avoid dents & damage</div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ✅ ORDER FORM (submits directly to WhatsApp) -->
+  <section id="order">
+    <div class="sectionHead">
+      <h2>Order</h2>
+      <p>Submit → WhatsApp opens ✨</p>
+    </div>
+
+    <div class="card">
+      <p class="sub" style="margin-top:0;">
+        Fill in your order below and click <b>Send Order to WhatsApp</b>. It will open WhatsApp with your message ready to send.
+      </p>
+
+      <form id="orderForm">
+        <div class="twoCol">
+          <div class="field">
+            <label for="customerName">Your Name</label>
+            <input id="customerName" type="text" placeholder="e.g., Amaka" required>
+          </div>
+          <div class="field">
+            <label for="customerPhone">Your Phone</label>
+            <input id="customerPhone" type="tel" placeholder="e.g., 0803 000 0000" required>
+          </div>
+        </div>
+
+        <div class="twoCol">
+          <div class="field">
+            <label for="orderItem">Item(s)</label>
+            <input id="orderItem" type="text" placeholder="e.g., Gift boxes / Branded boxes / Ribbons" required>
+          </div>
+          <div class="field">
+            <label for="orderQty">Quantity</label>
+            <input id="orderQty" type="number" min="1" placeholder="e.g., 50" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="orderDetails">Details</label>
+          <textarea id="orderDetails" placeholder="Sizes, colors, branding yes/no, delivery city + landmark, needed by date, etc." required></textarea>
+        </div>
+
+        <div class="ctaRow">
+          <button class="btn primary" type="submit">Send Order to WhatsApp 💬</button>
+          <a class="btn" href="mailto:faybees01@gmail.com">Email Us ✉️</a>
+        </div>
+
+        <p class="sub" style="margin-bottom:0;">WhatsApp: 08038987066</p>
+      </form>
     </div>
   </section>
 
@@ -646,16 +789,16 @@
         <p class="sub" style="margin-bottom:10px">Fastest reply is WhatsApp.</p>
 
         <div class="ctaRow">
-          <!-- ✅ Replace 2340000000000 with your real WhatsApp number -->
-          <a class="btn primary" href="https://wa.me/2340000000000?text=Hi%20Faybees!%20I%20want%20to%20place%20an%20order." target="_blank" rel="noreferrer">WhatsApp 💬</a>
-          <a class="btn cocoa" href="https://www.instagram.com/faybees._/" target="_blank" rel="noreferrer">Instagram ✨</a>
+          <a class="btn primary" href="https://wa.me/2348038987066?text=Hi%20Faybees!%20I%20want%20to%20place%20an%20order." target="_blank" rel="noreferrer">WhatsApp 💬</a>
+          <a class="btn cocoa" href="https://www.instagram.com/faybees._?igsh=Y3JieTF0aTVwNGNy" target="_blank" rel="noreferrer">Instagram ✨</a>
+          <a class="btn" href="mailto:faybees01@gmail.com">Email ✉️</a>
         </div>
 
         <div class="list" style="margin-top:12px">
           <div class="li"><b>Brand:</b> FAYBEES</div>
           <div class="li"><b>Slogan:</b> Beyond Packaging</div>
-          <div class="li"><b>Location:</b> Port Harcourt, Nigeria</div>
-          <div class="li"><b>Delivery:</b> Nationwide</div>
+          <div class="li"><b>Gmail:</b> faybees01@gmail.com</div>
+          <div class="li"><b>WhatsApp:</b> 08038987066</div>
         </div>
       </div>
 
@@ -691,6 +834,32 @@
     } catch (e) {
       msg.textContent = "Copy failed. Try selecting the text and copying manually.";
     }
+  });
+
+  // ✅ Order form -> WhatsApp submit
+  const WHATSAPP_INTL = "2348038987066"; // 08038987066 => +2348038987066
+  document.getElementById("orderForm").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const name = document.getElementById("customerName").value.trim();
+    const phone = document.getElementById("customerPhone").value.trim();
+    const item = document.getElementById("orderItem").value.trim();
+    const qty = document.getElementById("orderQty").value.trim();
+    const details = document.getElementById("orderDetails").value.trim();
+
+    const message =
+`Hello FAYBEES 👋
+I would like to place an order.
+
+Name: ${name}
+Phone: ${phone}
+Item(s): ${item}
+Quantity: ${qty}
+
+Details:
+${details}`;
+
+    const url = `https://wa.me/${WHATSAPP_INTL}?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank", "noopener,noreferrer");
   });
 </script>
 </body>
