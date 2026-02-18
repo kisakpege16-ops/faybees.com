@@ -4,7 +4,6 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>FAYBEES | Beyond Packaging</title>
-  <meta name="description" content="FAYBEES — Custom gifting and packaging materials." />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,25 +12,19 @@
 
   <style>
     :root{
-      /* Brown + Beige ONLY */
-      --beige-1:#f6efe7;
-      --beige-2:#efe4d8;
-      --beige-3:#fff7f0;
+      /* Requested ranges */
+      --brown-1:#5A2F1F;
+      --brown-2:#6B3A2A;
+      --beige-1:#D2C2A3;
+      --beige-2:#D8C8A8;
 
-      --brown-1:#2f1b14;
-      --brown-2:#4a2a20;
-      --brown-3:#7a4b35;
-      --brown-4:#b77b57;
-
-      --text:var(--brown-1);
-      --muted:rgba(47,27,20,.72);
-      --line:rgba(122,75,53,.25);
-      --shadow:0 18px 60px rgba(47,27,20,.14);
-      --radius:22px;
-      --max:1100px;
-
-      /* Keeps uploaded media in warm brown/beige tones */
-      --media-filter: sepia(1) saturate(.55) hue-rotate(-12deg) contrast(1.05);
+      --bg:#F7F0E4;
+      --text: var(--brown-1);
+      --muted: rgba(90,47,31,.70);
+      --line: rgba(107,58,42,.25);
+      --shadow: 0 18px 60px rgba(90,47,31,.14);
+      --radius: 22px;
+      --max: 1100px;
     }
 
     *{box-sizing:border-box}
@@ -41,22 +34,18 @@
       font-family:"Plus Jakarta Sans", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       color:var(--text);
       background:
-        radial-gradient(900px 500px at 15% 10%, rgba(183,123,87,.16), transparent 55%),
-        radial-gradient(900px 520px at 85% 20%, rgba(122,75,53,.12), transparent 55%),
-        linear-gradient(180deg, var(--beige-3), var(--beige-1));
+        radial-gradient(900px 520px at 15% 10%, rgba(107,58,42,.14), transparent 55%),
+        radial-gradient(900px 520px at 85% 20%, rgba(90,47,31,.10), transparent 55%),
+        linear-gradient(180deg, var(--beige-2), var(--beige-1));
       overflow-x:hidden;
     }
 
     a{color:inherit; text-decoration:none}
     img, video{max-width:100%; display:block}
 
-    .wrap{max-width:var(--max); margin:0 auto; padding:18px 16px 80px;}
-    section{scroll-margin-top:92px;}
-
-    /* Header */
     header{
       position:sticky; top:0; z-index:50;
-      background: rgba(246,239,231,.78);
+      background: rgba(216,200,168,.82);
       border-bottom:1px solid var(--line);
       backdrop-filter: blur(12px);
     }
@@ -69,6 +58,7 @@
       justify-content:space-between;
       gap:12px;
     }
+
     .brand{
       display:flex;
       align-items:center;
@@ -76,18 +66,17 @@
       min-width: 230px;
     }
     .brandLogo{
-      width:50px; height:50px;
+      width:52px; height:52px;
       border-radius:18px;
       overflow:hidden;
       border:1px solid var(--line);
-      background: var(--beige-3);
-      box-shadow: 0 14px 40px rgba(47,27,20,.12);
+      background: var(--bg);
+      box-shadow: 0 14px 40px rgba(90,47,31,.12);
       flex: 0 0 auto;
     }
     .brandLogo img{
       width:100%; height:100%;
-      object-fit:cover;
-      filter: var(--media-filter);
+      object-fit:cover; /* keeps original colors */
     }
     .brandText strong{
       display:block;
@@ -120,20 +109,19 @@
       padding:10px 12px;
       border-radius:999px;
       border:1px solid var(--line);
-      background: rgba(255,247,240,.70);
+      background: rgba(247,240,228,.70);
       color: var(--brown-2);
       transition: transform .12s ease, background .12s ease, border-color .12s ease;
     }
     .pill:hover{
       transform: translateY(-1px);
-      border-color: rgba(122,75,53,.42);
-      background: rgba(255,247,240,.92);
+      border-color: rgba(107,58,42,.42);
+      background: rgba(247,240,228,.92);
     }
     @media (max-width: 920px){
       nav{display:none;}
     }
 
-    /* Social icon buttons */
     .social{
       display:flex;
       gap:8px;
@@ -145,24 +133,26 @@
       width:42px; height:42px;
       border-radius:16px;
       border:1px solid var(--line);
-      background: rgba(255,247,240,.72);
-      box-shadow: 0 14px 40px rgba(47,27,20,.10);
+      background: rgba(247,240,228,.72);
+      box-shadow: 0 14px 40px rgba(90,47,31,.10);
       display:grid;
       place-items:center;
       transition: transform .12s ease, background .12s ease, border-color .12s ease;
     }
     .iconbtn:hover{
       transform: translateY(-1px);
-      border-color: rgba(122,75,53,.42);
-      background: rgba(255,247,240,.92);
+      border-color: rgba(107,58,42,.42);
+      background: rgba(247,240,228,.92);
     }
     .iconbtn svg{width:19px; height:19px; fill: var(--brown-2);}
 
-    /* Card / sections */
+    .wrap{max-width:var(--max); margin:0 auto; padding:18px 16px 80px;}
+    section{scroll-margin-top:92px;}
+
     .card{
       border:1px solid var(--line);
       border-radius: var(--radius);
-      background: rgba(255,247,240,.72);
+      background: rgba(247,240,228,.72);
       box-shadow: var(--shadow);
       backdrop-filter: blur(10px);
     }
@@ -171,14 +161,12 @@
     .hero{
       margin-top:16px;
       padding:22px;
-      position:relative;
       overflow:hidden;
     }
     .heroGrid{
       display:grid;
       grid-template-columns: 1.15fr .85fr;
       gap:14px;
-      align-items:stretch;
     }
     @media (max-width: 920px){
       .heroGrid{grid-template-columns:1fr;}
@@ -191,7 +179,7 @@
       padding:10px 12px;
       border-radius:999px;
       border:1px solid var(--line);
-      background: rgba(255,247,240,.70);
+      background: rgba(247,240,228,.70);
       color: var(--brown-2);
       font-weight:900;
       letter-spacing:.10em;
@@ -215,7 +203,6 @@
       color: var(--muted);
       font-size:15px;
       line-height:1.65;
-      max-width: 62ch;
     }
 
     .ctaRow{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;}
@@ -227,21 +214,19 @@
       padding:12px 14px;
       border-radius:16px;
       border:1px solid var(--line);
-      background: rgba(255,247,240,.82);
+      background: rgba(247,240,228,.82);
       font-weight:900;
       color: var(--brown-2);
       letter-spacing:.06em;
       text-transform:uppercase;
       font-size:12px;
-      transition: transform .12s ease, background .12s ease, border-color .12s ease;
       cursor:pointer;
     }
-    .btn:hover{transform: translateY(-1px); border-color: rgba(122,75,53,.42); background: rgba(255,247,240,.96);}
     .btn.primary{
       border:none;
-      background: linear-gradient(135deg, var(--brown-4), var(--brown-2));
-      color: var(--beige-3);
-      box-shadow: 0 18px 55px rgba(47,27,20,.18);
+      background: linear-gradient(135deg, var(--brown-2), var(--brown-1));
+      color: var(--bg);
+      box-shadow: 0 18px 55px rgba(90,47,31,.18);
     }
 
     .sectionHead{
@@ -262,40 +247,26 @@
     }
     .sectionHead p{margin:0; color: var(--muted); font-weight:700;}
 
-    .note{
-      margin:0;
-      color: var(--muted);
-      font-weight:700;
-      line-height:1.55;
-      font-size:13px;
-      border-left: 3px solid rgba(122,75,53,.35);
-      padding-left:12px;
-    }
-
-    /* Highlights grid (images you uploaded) */
     .highlights{
       display:grid;
       grid-template-columns: repeat(3, 1fr);
       gap:12px;
     }
-    @media (max-width: 920px){
-      .highlights{grid-template-columns:1fr;}
-    }
+    @media (max-width: 920px){ .highlights{grid-template-columns:1fr;} }
+
     .mediaCard{
       overflow:hidden;
       border-radius: var(--radius);
       border:1px solid var(--line);
-      background: rgba(255,247,240,.78);
+      background: rgba(247,240,228,.78);
       box-shadow: var(--shadow);
       position:relative;
-      min-height: 250px;
     }
     .mediaCard img{
       width:100%;
       height: 360px;
       object-fit:cover;
-      filter: var(--media-filter);
-      background: rgba(47,27,20,.04);
+      background: rgba(90,47,31,.04);
     }
     .mediaLabel{
       position:absolute;
@@ -303,23 +274,47 @@
       padding:10px 12px;
       border-radius:999px;
       border:1px solid var(--line);
-      background: rgba(255,247,240,.82);
+      background: rgba(247,240,228,.82);
       color: var(--brown-2);
       font-weight:900;
       letter-spacing:.08em;
       text-transform:uppercase;
       font-size:12px;
     }
-    .missing{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:18px;
-      height:360px;
-      color:var(--muted);
-      font-weight:800;
+
+    /* Videos */
+    .videoGrid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:12px;
+    }
+    .videoCard{
+      border-radius: var(--radius);
+      overflow:hidden;
+      border:1px solid var(--line);
+      background: rgba(247,240,228,.78);
+      box-shadow: var(--shadow);
+      position:relative;
+    }
+    .videoBadge{
+      position:absolute;
+      left:12px; top:12px;
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(247,240,228,.82);
+      color: var(--brown-2);
+      font-weight:900;
       letter-spacing:.08em;
       text-transform:uppercase;
+      font-size:12px;
+      z-index:2;
+    }
+    .videoCard video{
+      width:100%;
+      height: 420px;
+      object-fit:cover;
+      background: rgba(90,47,31,.04);
     }
 
     /* Form */
@@ -336,17 +331,12 @@
       padding:12px 12px;
       border-radius:16px;
       border:1px solid var(--line);
-      background: rgba(255,247,240,.90);
+      background: rgba(247,240,228,.90);
       font: inherit;
       outline:none;
       color: var(--text);
-      transition: box-shadow .12s ease, border-color .12s ease;
     }
     textarea{min-height:120px; resize:vertical;}
-    input:focus, textarea:focus{
-      border-color: rgba(122,75,53,.55);
-      box-shadow: 0 0 0 4px rgba(183,123,87,.25);
-    }
     .row2{
       display:grid;
       grid-template-columns: 1fr 1fr;
@@ -354,7 +344,6 @@
     }
     @media (max-width: 560px){ .row2{grid-template-columns:1fr;} }
 
-    /* Inspiration preview */
     .previewGrid{
       display:grid;
       grid-template-columns: repeat(4, 1fr);
@@ -366,67 +355,24 @@
       border:1px solid var(--line);
       border-radius:18px;
       overflow:hidden;
-      background: rgba(255,247,240,.80);
-      box-shadow: 0 12px 40px rgba(47,27,20,.10);
+      background: rgba(247,240,228,.80);
+      box-shadow: 0 12px 40px rgba(90,47,31,.10);
       aspect-ratio: 1 / 1;
       position:relative;
     }
-    .preview img{
-      width:100%; height:100%;
-      object-fit:cover;
-      filter: var(--media-filter);
-    }
+    .preview img{width:100%; height:100%; object-fit:cover;}
     .preview span{
       position:absolute;
       left:10px; bottom:10px;
       padding:8px 10px;
       border-radius:999px;
       border:1px solid var(--line);
-      background: rgba(255,247,240,.82);
+      background: rgba(247,240,228,.82);
       color: var(--brown-2);
       font-weight:900;
       font-size:11px;
       letter-spacing:.08em;
       text-transform:uppercase;
-    }
-
-    /* Videos */
-    .videoGrid{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:12px;
-    }
-    @media (max-width: 920px){ .videoGrid{grid-template-columns:1fr;} }
-
-    .videoCard{
-      border-radius: var(--radius);
-      overflow:hidden;
-      border:1px solid var(--line);
-      background: rgba(255,247,240,.78);
-      box-shadow: var(--shadow);
-      position:relative;
-      min-height: 240px;
-    }
-    .videoCard video{
-      width:100%;
-      height: 360px;
-      object-fit:cover;
-      filter: var(--media-filter);
-      background: rgba(47,27,20,.04);
-    }
-    .videoBadge{
-      position:absolute;
-      left:12px; top:12px;
-      padding:10px 12px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background: rgba(255,247,240,.82);
-      color: var(--brown-2);
-      font-weight:900;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-      font-size:12px;
-      z-index:2;
     }
 
     footer{
@@ -437,117 +383,16 @@
       padding-top:18px;
       border-top:1px solid var(--line);
     }
-
-    /* Floating graphics (cute bears + flowers) */
-    .floatLayer{
-      position:fixed;
-      inset:0;
-      pointer-events:none;
-      z-index:2;
-      opacity:.26;
-      filter: saturate(.9);
-    }
-    .floater{
-      position:absolute;
-      width:120px;
-      height:120px;
-      animation: drift 14s ease-in-out infinite;
-    }
-    .floater.small{width:82px; height:82px; animation-duration: 12s;}
-    .floater.tiny{width:64px; height:64px; animation-duration: 10s;}
-    .floater svg{width:100%; height:100%;}
-    @keyframes drift{
-      0%{ transform: translate(0,0) rotate(0deg); }
-      50%{ transform: translate(14px,-18px) rotate(6deg); }
-      100%{ transform: translate(0,0) rotate(0deg); }
-    }
-    @keyframes bob{
-      0%{ transform: translateY(0); }
-      50%{ transform: translateY(-10px); }
-      100%{ transform: translateY(0); }
-    }
-    .bob{ animation: bob 6.5s ease-in-out infinite; }
   </style>
 </head>
 
 <body>
-  <!-- Floating brown/beige graphics -->
-  <div class="floatLayer" aria-hidden="true">
-    <!-- Bear -->
-    <div class="floater" style="left:3%; top:18%;">
-      <svg viewBox="0 0 120 120">
-        <defs>
-          <linearGradient id="bearG" x1="0" x2="1">
-            <stop offset="0" stop-color="#b77b57"/>
-            <stop offset="1" stop-color="#4a2a20"/>
-          </linearGradient>
-        </defs>
-        <circle cx="38" cy="34" r="16" fill="url(#bearG)"/>
-        <circle cx="82" cy="34" r="16" fill="url(#bearG)"/>
-        <circle cx="60" cy="64" r="36" fill="#7a4b35"/>
-        <circle cx="48" cy="58" r="6" fill="#2f1b14"/>
-        <circle cx="72" cy="58" r="6" fill="#2f1b14"/>
-        <ellipse cx="60" cy="74" rx="14" ry="12" fill="#efe4d8" />
-        <circle cx="60" cy="72" r="5" fill="#2f1b14"/>
-        <path d="M54 80 Q60 86 66 80" stroke="#2f1b14" stroke-width="3" fill="none" stroke-linecap="round"/>
-      </svg>
-    </div>
-
-    <!-- Flower -->
-    <div class="floater small bob" style="right:4%; top:22%;">
-      <svg viewBox="0 0 120 120">
-        <circle cx="60" cy="60" r="10" fill="#2f1b14"/>
-        <g fill="#b77b57">
-          <circle cx="60" cy="30" r="16"/>
-          <circle cx="84" cy="40" r="16"/>
-          <circle cx="90" cy="64" r="16"/>
-          <circle cx="76" cy="86" r="16"/>
-          <circle cx="44" cy="90" r="16"/>
-          <circle cx="26" cy="70" r="16"/>
-          <circle cx="30" cy="42" r="16"/>
-          <circle cx="44" cy="34" r="16"/>
-        </g>
-        <circle cx="60" cy="60" r="14" fill="#efe4d8"/>
-      </svg>
-    </div>
-
-    <!-- Tiny flower -->
-    <div class="floater tiny" style="left:8%; bottom:10%;">
-      <svg viewBox="0 0 120 120">
-        <circle cx="60" cy="60" r="10" fill="#2f1b14"/>
-        <g fill="#7a4b35">
-          <circle cx="60" cy="34" r="14"/>
-          <circle cx="82" cy="48" r="14"/>
-          <circle cx="82" cy="72" r="14"/>
-          <circle cx="60" cy="86" r="14"/>
-          <circle cx="38" cy="72" r="14"/>
-          <circle cx="38" cy="48" r="14"/>
-        </g>
-        <circle cx="60" cy="60" r="14" fill="#efe4d8"/>
-      </svg>
-    </div>
-
-    <!-- Small bear -->
-    <div class="floater small bob" style="right:10%; bottom:12%;">
-      <svg viewBox="0 0 120 120">
-        <circle cx="40" cy="36" r="14" fill="#b77b57"/>
-        <circle cx="80" cy="36" r="14" fill="#b77b57"/>
-        <circle cx="60" cy="66" r="34" fill="#7a4b35"/>
-        <circle cx="50" cy="62" r="5" fill="#2f1b14"/>
-        <circle cx="70" cy="62" r="5" fill="#2f1b14"/>
-        <ellipse cx="60" cy="76" rx="13" ry="11" fill="#efe4d8" />
-        <circle cx="60" cy="74" r="4.5" fill="#2f1b14"/>
-        <path d="M54 82 Q60 87 66 82" stroke="#2f1b14" stroke-width="3" fill="none" stroke-linecap="round"/>
-      </svg>
-    </div>
-  </div>
-
   <header>
     <div class="topbar">
       <div class="brand">
         <div class="brandLogo">
-          <!-- Logo loads automatically from /assets -->
-          <img id="logoImg" alt="FAYBEES logo">
+          <!-- EXACT filename -->
+          <img src="assets/faybees-logo.jpg" alt="FAYBEES logo">
         </div>
         <div class="brandText">
           <strong>FAYBEES</strong>
@@ -561,33 +406,28 @@
         <a class="pill" href="#order">Order</a>
       </nav>
 
-      <!-- Social “logos” -->
       <div class="social" aria-label="Social links">
-        <!-- Instagram -->
         <a class="iconbtn" href="https://www.instagram.com/faybees._?igsh=Y3JieTF0aTVwNGNy" target="_blank" rel="noopener" aria-label="Instagram">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 4a6 6 0 1 1 0 12a6 6 0 0 1 0-12zm0 2a4 4 0 1 0 0 8a4 4 0 0 0 0-8zm6.4-2.2a1.2 1.2 0 1 1-2.4 0a1.2 1.2 0 0 1 2.4 0z"/>
           </svg>
         </a>
 
-        <!-- TikTok -->
         <a class="iconbtn" href="https://www.tiktok.com/@faybees._?_r=1&_t=ZP-940QfztdvDy" target="_blank" rel="noopener" aria-label="TikTok">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M15 3c.4 2.7 2.3 4.8 5 5.1V11c-1.9-.1-3.7-.7-5-1.8V15a6 6 0 1 1-6-6c.3 0 .7 0 1 .1v3.1c-.3-.2-.6-.2-1-.2a3 3 0 1 0 3 3V3h3z"/>
           </svg>
         </a>
 
-        <!-- Gmail -->
         <a class="iconbtn" href="mailto:faybees01@gmail.com" aria-label="Gmail">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z"/>
           </svg>
         </a>
 
-        <!-- WhatsApp -->
         <a class="iconbtn" href="https://wa.me/2348038987066" target="_blank" rel="noopener" aria-label="WhatsApp">
           <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M12 2a10 10 0 0 0-8.7 14.9L2 22l5.3-1.4A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3.1.8.8-3-.2-.3A8 8 0 1 1 12 20zm4.6-5.4c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1-2-.9-3.3-2.9-3.4-3.1-.1-.2 0-.4.1-.5l.6-.7c.1-.2.1-.4.1-.6s-.6-1.4-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.4-.7.8-1 1.8-.9 2.8.1 1.7 1.1 3.4 2.4 4.6 1.3 1.2 3 2.2 4.8 2.2 1 0 2-.3 2.8-1 .2-.2.4-.5.4-.7v-.5c0-.2-.1-.4-.3-.5z"/>
+            <path d="M12 2a10 10 0 0 0-8.7 14.9L2 22l5.3-1.4A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3.1.8.8-3-.2-.3A8 8 0 1 1 12 20z"/>
           </svg>
         </a>
       </div>
@@ -595,17 +435,12 @@
   </header>
 
   <main class="wrap">
-    <!-- HERO -->
     <section class="card hero" id="top">
       <div class="heroGrid">
         <div class="panel">
-          <div class="kicker">Custom Gifting + Packaging Materials</div>
-          <h1>FAYBEES</h1>
-          <p class="sub">
-            This website is for <b>custom gifting</b> and <b>packaging materials</b> only.
-            <br><br>
-            <b>About:</b> we make and supply packaging essentials .
-          </p>
+          <div class="kicker">FAYBEES</div>
+          <h1>Beyond Packaging</h1>
+          <p class="sub"><b>About:</b> we make and supply packaging essentials .</p>
 
           <div class="ctaRow">
             <a class="btn primary" href="#order">Go to Order Form</a>
@@ -615,82 +450,49 @@
         </div>
 
         <div class="panel">
-          <div class="kicker">Ordering Rules</div>
-          <p class="note">
-            Orders can only be placed through the <b>Order Form</b>.
+          <div class="kicker">Order Only by Form</div>
+          <p class="sub" style="margin:0;">
             When you submit, WhatsApp opens with your order message ready to send.
-            <br><br>
-            If you upload inspiration photos, you’ll need to <b>attach them manually in WhatsApp</b> (WhatsApp doesn’t allow auto-attaching images from a website link).
+            If you uploaded inspiration photos, attach them manually inside WhatsApp after it opens.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- HIGHLIGHTS -->
     <section id="highlights">
       <div class="sectionHead">
-        <h2>Brand Highlights</h2>
-        <p>Images display immediately on load</p>
+        <h2>Highlights</h2>
+        <p></p>
       </div>
 
       <div class="highlights">
-        <div class="mediaCard">
-          <img class="autoImg" data-sources="assets/IMG_7707.jpg|assets/IMG_7707.JPG|assets/delivery-days.jpg" alt="Delivery Days">
-          <div class="mediaLabel">Delivery Days</div>
-        </div>
-
-        <div class="mediaCard">
-          <img class="autoImg" data-sources="assets/IMG_7711.jpg|assets/IMG_7711.JPG|assets/box-sizes.jpg" alt="Box Sizes">
-          <div class="mediaLabel">Box Sizes</div>
-        </div>
-
-        <div class="mediaCard">
-          <img class="autoImg" data-sources="assets/IMG_7713.PNG|assets/IMG_7713.png|assets/how-to-order.png" alt="How to Order">
-          <div class="mediaLabel">How to Order</div>
-        </div>
-
-        <div class="mediaCard">
-          <img class="autoImg" data-sources="assets/IMG_7709.jpg|assets/IMG_7709.JPG|assets/deliveries.jpg" alt="Deliveries">
-          <div class="mediaLabel">Deliveries</div>
-        </div>
-
-        <div class="mediaCard">
-          <img class="autoImg" data-sources="assets/IMG_7708.jpg|assets/IMG_7708.JPG|assets/fresh-flowers.jpg" alt="Custom Gifting">
-          <div class="mediaLabel">Custom Gifting</div>
-        </div>
-
-        <div class="mediaCard">
-          <img class="autoImg" data-sources="assets/IMG_7710.jpg|assets/IMG_7710.JPG|assets/reviews.jpg" alt="Reviews">
-          <div class="mediaLabel">Reviews</div>
-        </div>
+        <div class="mediaCard"><img src="assets/IMG_7707.jpg" alt="IMG_7707"><div class="mediaLabel">IMG_7707</div></div>
+        <div class="mediaCard"><img src="assets/IMG_7708.jpg" alt="IMG_7708"><div class="mediaLabel">IMG_7708</div></div>
+        <div class="mediaCard"><img src="assets/IMG_7709.jpg" alt="IMG_7709"><div class="mediaLabel">IMG_7709</div></div>
+        <div class="mediaCard"><img src="assets/IMG_7710.jpg" alt="IMG_7710"><div class="mediaLabel">IMG_7710</div></div>
+        <div class="mediaCard"><img src="assets/IMG_7711.jpg" alt="IMG_7711"><div class="mediaLabel">IMG_7711</div></div>
+        <div class="mediaCard"><img src="assets/IMG_7712.jpg" alt="IMG_7712"><div class="mediaLabel">IMG_7712</div></div>
+        <div class="mediaCard"><img src="assets/IMG_7713.jpg" alt="IMG_7713"><div class="mediaLabel">IMG_7713</div></div>
       </div>
     </section>
 
-    <!-- VIDEOS -->
     <section id="videos">
       <div class="sectionHead">
         <h2>Videos</h2>
-        <p>They play when you scroll to them</p>
+        <p>Autoplays on scroll</p>
       </div>
 
       <div class="videoGrid">
         <div class="videoCard">
           <div class="videoBadge">Brand Video</div>
-          <video class="autoVideo" muted playsinline preload="metadata" controls
-            data-sources="assets/video-1.mp4|assets/v1c044g50000d64u1qvog65g17e0m7s0.MP4|assets/v1c044g50000d64u1qvog65g17e0m7s0.mp4">
-          </video>
-        </div>
-
-        <div class="videoCard">
-          <div class="videoBadge">Brand Video</div>
-          <video class="autoVideo" muted playsinline preload="metadata" controls
-            data-sources="assets/video-2.mp4|assets/v14044g50000d632k47og65hr7h5l65g.mov|assets/v14044g50000d632k47og65hr7h5l65g.MOV|assets/video-2.mov">
+          <video class="autoVideo" muted playsinline preload="metadata" controls>
+            <!-- EXACT filename + EXACT extension -->
+            <source src="assets/v1c044g50000d64u1qvog65g17e0m7s0.MP4" type="video/mp4">
           </video>
         </div>
       </div>
     </section>
 
-    <!-- ORDER FORM (ONLY WAY TO ORDER) -->
     <section id="order">
       <div class="sectionHead">
         <h2>Order Form</h2>
@@ -698,11 +500,6 @@
       </div>
 
       <div class="card panel">
-        <p class="note">
-          This form is the only way to place an order.
-          When you click <b>Send Order to WhatsApp</b>, WhatsApp opens with your order details filled in.
-        </p>
-
         <form id="orderForm">
           <div class="row2">
             <div>
@@ -728,15 +525,12 @@
 
           <div>
             <label for="details">Order Details (exactly what is needed)</label>
-            <textarea id="details" placeholder="Sizes, colors, box type, finishing, branding notes, deadline, delivery location, etc." required></textarea>
+            <textarea id="details" placeholder="Sizes, colors, box type, finishing, deadline, delivery location, etc." required></textarea>
           </div>
 
           <div>
             <label for="inspo">Inspiration Photos (optional)</label>
             <input id="inspo" type="file" accept="image/*" multiple>
-            <p class="note" style="margin-top:10px;">
-              Photos will preview below. After WhatsApp opens, attach them manually in WhatsApp.
-            </p>
             <div id="previewGrid" class="previewGrid" aria-live="polite"></div>
           </div>
 
@@ -745,126 +539,15 @@
       </div>
     </section>
 
-    <footer>
-      © <span id="year"></span> FAYBEES — Beyond Packaging
-    </footer>
+    <footer>© <span id="year"></span> FAYBEES — Beyond Packaging</footer>
   </main>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // WhatsApp wa.me format: Nigeria number +2348038987066
     const WHATSAPP_INTL = "2348038987066";
 
-    // ===========
-    // AUTO-LOADER (prevents broken images/videos if filenames differ)
-    // ===========
-    async function urlExists(url){
-      try{
-        const res = await fetch(url, { method:"HEAD", cache:"no-store" });
-        return res.ok;
-      }catch(e){
-        return false;
-      }
-    }
-
-    async function setFirstWorkingImage(imgEl, sources){
-      for (const src of sources){
-        if (await urlExists(src)){
-          imgEl.src = src;
-          return true;
-        }
-      }
-      // fallback UI
-      const parent = imgEl.closest(".mediaCard") || imgEl.parentElement;
-      if (parent){
-        const box = document.createElement("div");
-        box.className = "missing";
-        box.textContent = "IMAGE NOT FOUND IN /assets";
-        imgEl.replaceWith(box);
-      }
-      return false;
-    }
-
-    async function setFirstWorkingVideo(videoEl, sources){
-      for (const src of sources){
-        if (await urlExists(src)){
-          const source = document.createElement("source");
-          source.src = src;
-
-          // guess type
-          const lower = src.toLowerCase();
-          if (lower.endsWith(".mp4")) source.type = "video/mp4";
-          else if (lower.endsWith(".mov")) source.type = "video/quicktime";
-          else source.type = "video/mp4";
-
-          videoEl.appendChild(source);
-          videoEl.load();
-          return true;
-        }
-      }
-      // fallback UI
-      const parent = videoEl.closest(".videoCard") || videoEl.parentElement;
-      if (parent){
-        const box = document.createElement("div");
-        box.className = "missing";
-        box.style.height = "360px";
-        box.textContent = "VIDEO NOT FOUND IN /assets";
-        videoEl.replaceWith(box);
-      }
-      return false;
-    }
-
-    // ===========
-    // LOGO AUTO LOAD
-    // ===========
-    (async () => {
-      const logo = document.getElementById("logoImg");
-      const candidates = [
-        "assets/faybees-logo.jpg",
-        "assets/faybees-logo.jpeg",
-        "assets/FAYBEES-1..jpg",
-        "assets/FAYBEES-1..jpeg",
-        "assets/FAYBEES-1.jpg",
-        "assets/FAYBEES-1.jpeg",
-        "assets/logo.jpg",
-        "assets/logo.jpeg"
-      ];
-      for (const src of candidates){
-        if (await urlExists(src)){
-          logo.src = src;
-          return;
-        }
-      }
-      // last resort
-      logo.alt = "Upload your logo into /assets (e.g. faybees-logo.jpg)";
-    })();
-
-    // ===========
-    // HIGHLIGHT IMAGES AUTO LOAD
-    // ===========
-    (async () => {
-      const imgs = document.querySelectorAll(".autoImg");
-      for (const img of imgs){
-        const sources = (img.dataset.sources || "").split("|").map(s => s.trim()).filter(Boolean);
-        await setFirstWorkingImage(img, sources);
-      }
-    })();
-
-    // ===========
-    // VIDEOS AUTO LOAD
-    // ===========
-    (async () => {
-      const vids = document.querySelectorAll(".autoVideo");
-      for (const v of vids){
-        const sources = (v.dataset.sources || "").split("|").map(s => s.trim()).filter(Boolean);
-        await setFirstWorkingVideo(v, sources);
-      }
-    })();
-
-    // ===========
-    // INSPIRATION PREVIEWS
-    // ===========
+    // Inspiration preview
     const inspoInput = document.getElementById("inspo");
     const previewGrid = document.getElementById("previewGrid");
     let inspoCount = 0;
@@ -889,9 +572,7 @@
       });
     });
 
-    // ===========
     // ORDER FORM -> WHATSAPP
-    // ===========
     document.getElementById("orderForm").addEventListener("submit", (e) => {
       e.preventDefault();
 
@@ -919,9 +600,7 @@ Inspiration photos attached? ${inspoCount > 0 ? "Yes (I will attach manually)" :
       window.open(url, "_blank", "noopener,noreferrer");
     });
 
-    // ===========
-    // AUTOPLAY VIDEOS ON SCROLL
-    // ===========
+    // AUTOPLAY VIDEO ON SCROLL
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         const v = entry.target;
@@ -935,10 +614,8 @@ Inspiration photos attached? ${inspoCount > 0 ? "Yes (I will attach manually)" :
       });
     }, { threshold: [0.0, 0.25, 0.6, 1.0] });
 
-    // Wait a moment for videos to load sources, then observe
-    setTimeout(() => {
-      document.querySelectorAll(".autoVideo").forEach(v => observer.observe(v));
-    }, 600);
+    document.querySelectorAll(".autoVideo").forEach(v => observer.observe(v));
   </script>
 </body>
 </html>
+
